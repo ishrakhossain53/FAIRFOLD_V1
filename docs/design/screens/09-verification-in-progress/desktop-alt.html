@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#5e5f5a", "surface-variant": "#e2e2e2", "on-background": "#1a1c1c", "surface-container-lowest": "#ffffff", "secondary-container": "#dbded9", "on-secondary": "#ffffff", "tertiary-fixed": "#e4e2dd", "on-primary-fixed": "#092100", "inverse-surface": "#2f3131", "outline": "#717a68", "on-surface": "#1a1c1c", "on-tertiary-fixed": "#1b1c19", "on-primary": "#ffffff", "inverse-on-surface": "#f0f1f1", "tertiary-container": "#d6d5cf", "on-surface-variant": "#41493a", "error": "#ba1a1a", "outline-variant": "#c1cab5", "surface-tint": "#2f6c00", "surface-container-low": "#f3f3f4", "surface-container-highest": "#e2e2e2", "primary": "#2f6c00", "on-secondary-fixed-variant": "#444844", "surface-container": "#eeeeee", "primary-fixed-dim": "#91d963", "on-secondary-fixed": "#191c1a", "on-error-container": "#93000a", "inverse-primary": "#91d963", "surface-bright": "#f9f9f9", "surface-container-high": "#e8e8e8", "on-secondary-container": "#5e625e", "tertiary-fixed-dim": "#c8c6c1", "error-container": "#ffdad6", "on-tertiary-container": "#5c5c58", "surface-dim": "#dadada", "secondary-fixed-dim": "#c4c7c3", "on-primary-fixed-variant": "#225100", "background": "#f9f9f9", "on-error": "#ffffff", "primary-container": "#9fe870", "on-tertiary-fixed-variant": "#474743", "on-primary-container": "#2e6900", "on-tertiary": "#ffffff", "secondary-fixed": "#e0e3de", "primary-fixed": "#acf67c", "surface": "#f9f9f9", "secondary": "#5b5f5c" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "space-xl": "2.5rem", "margin-mobile": "1.25rem", "space-md": "1rem", "margin": "3rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem" }, fontFamily: { "label-md": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Manrope"], "headline-lg": ["Manrope"], "label-lg": ["Inter"], "body-lg": ["Inter"], "display-hero-mobile": ["Manrope"], "code-snippet": ["JetBrains Mono"], "body-sm": ["Inter"], "headline-lg-mobile": ["Manrope"], "headline-md": ["Manrope"], "display-hero": ["Manrope"] }, fontSize: { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "900" }], "code-snippet": ["13px", { "lineHeight": "20px", "fontWeight": "500" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "800" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "900" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><img alt="FairFold Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCqSs8i42LisnbSKJ94y8I0GuuHui9bF3hZd9XqYDYK7voeIZQb0WbM5V8p3ziRhlM5e1VJcl4jLQ63LKxsG_XhfJ5CXf-I5FotsL9onEWheGQZltM2nmVpNRVp02u0yVQzcFhIrwHTihatEgbNu7n04QgZxdJtfP_TVVd4zsP5trTEg7r_JSeyFzrSw9nKC3EfKjodmc8bPpHOVSz8vN1C-HpIzE34u-1GNWYDgnvy"/><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight ml-1 truncate max-w-[170px]">Verification Flow</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9Lp7Slmm_AWuvp0QnGTHPoXfRjc6Ruc8tTlmc0H3OgP5UBIBCUFI6rXSsg95h-sF6KE_pq8yNPVELpgVLgMjEW0jAPR3_JcAvzTxa_MPOKbRiLtntb5kTFiwSxnAq4UKTy1If8JlHtNJ2lfnyE1q7Se4h8rBoSRkIygXgHyxbWDxdE3OkDWk6ChdDveiV5b_73xzRdgqXAcPX4K7Gd3_6QbAyeFpRYY4r__E_AE"/></div></div></header><main class="flex-1 flex flex-col relative w-full px-gutter-mobile pt-16 pb-safe bg-surface-container-high"><div class="flex flex-col w-full pb-8">
+<!-- Stepper Bar -->
+<div class="w-full pt-3 pb-5">
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-sm">
+<div class="flex items-center justify-between relative">
+<!-- Connecting Line Background -->
+<div class="absolute left-6 right-6 top-1/2 -translate-y-1/2 h-1 bg-surface-container rounded-full z-0"></div>
+<!-- Active Connecting Line (Progress 75%) -->
+<div class="absolute left-6 w-3/4 top-1/2 -translate-y-1/2 h-1 bg-primary-container rounded-full z-0"></div>
+<!-- Step 1: CV -->
+<div class="flex flex-col items-center relative z-10 gap-1.5">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center font-bold text-[14px]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">CV</span>
+</div>
+<!-- Step 2: Skills -->
+<div class="flex flex-col items-center relative z-10 gap-1.5">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center font-bold text-[14px]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Skills</span>
+</div>
+<!-- Step 3: GitHub -->
+<div class="flex flex-col items-center relative z-10 gap-1.5">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center font-bold text-[14px]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">GitHub</span>
+</div>
+<!-- Step 4: Verify (Active Pulse) -->
+<div class="flex flex-col items-center relative z-10 gap-1.5">
+<div class="relative w-8 h-8 flex items-center justify-center">
+<span class="absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75 animate-ping"></span>
+<div class="relative w-8 h-8 rounded-full bg-on-surface text-surface-container-lowest flex items-center justify-center font-bold text-[13px]">
+<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Verify</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Status Card -->
+<div class="bg-surface-container-lowest rounded-lg p-5 mb-4 shadow-sm">
+<!-- Header with playful scan badge -->
+<div class="flex items-start justify-between gap-3 mb-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-low rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-md text-label-md text-tertiary">Real-time code audit</span>
+</div>
+<div class="flex items-center text-tertiary gap-1 text-[13px] font-label-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>~2m left</span>
+</div>
+</div>
+<h2 class="font-display-hero-mobile text-headline-lg-mobile text-on-surface tracking-tight mt-1 mb-2">
+      Checking your public code...
+    </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
+      Usually takes under 3 minutes. You can safely close this screen; we'll email you the moment your score is finalized.
+    </p>
+<!-- Pipeline Step Flow -->
+<div class="space-y-3.5 bg-surface-container-low p-4 rounded-xl">
+<!-- Step 1 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Fetch repositories</span>
+</div>
+<span class="font-code-snippet text-code-snippet text-tertiary">23 repos</span>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Collect commit evidence</span>
+</div>
+<span class="font-code-snippet text-code-snippet text-tertiary">842 commits</span>
+</div>
+<!-- Step 3 (Active) -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-5 h-5 rounded-full bg-on-surface text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] animate-spin">refresh</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Match CV skills</span>
+</div>
+<span class="font-code-snippet text-code-snippet text-primary font-bold">In progress</span>
+</div>
+<!-- Step 4 -->
+<div class="flex items-center justify-between opacity-50">
+<div class="flex items-center gap-2.5">
+<div class="w-5 h-5 rounded-full bg-secondary-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[12px]">hourglass_empty</span>
+</div>
+<span class="font-label-lg text-label-lg text-tertiary">Score algorithmic confidence</span>
+</div>
+<span class="font-code-snippet text-code-snippet text-tertiary">Queued</span>
+</div>
+<!-- Step 5 -->
+<div class="flex items-center justify-between opacity-50">
+<div class="flex items-center gap-2.5">
+<div class="w-5 h-5 rounded-full bg-secondary-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+</div>
+<span class="font-label-lg text-label-lg text-tertiary">Publish immutable profile</span>
+</div>
+<span class="font-code-snippet text-code-snippet text-tertiary">Queued</span>
+</div>
+</div>
+</div>
+<!-- Live Scan Counter Cards -->
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-md text-label-md text-on-surface-variant">Repositories</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">source</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-extrabold" id="repo-counter">9</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">/ 23</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 39%"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-md text-label-md text-on-surface-variant">Skills Verified</span>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-extrabold" id="skill-counter">3</span>
+<span class="font-headline-sm text-headline-sm text-tertiary">/ 7</span>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 42%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-time Skill Analysis Stream -->
+<div class="bg-surface-container-lowest rounded-lg p-5 mb-4 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Skill Verification Stream</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Heuristic parser analyzing code signatures</p>
+</div>
+<span class="material-symbols-outlined text-primary-container animate-spin text-[22px]">troubleshoot</span>
+</div>
+<div class="space-y-3">
+<!-- React: Verified -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">React</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[12px] font-label-md bg-[#E2F6D5] text-[#054D28]">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'wght' 700;">check_circle</span>
+              Verified
+            </span>
+</div>
+<span class="font-code-snippet text-code-snippet text-on-surface font-bold">Score 0.82</span>
+</div>
+<div class="flex items-center text-tertiary font-body-sm text-[13px] gap-1">
+<span class="material-symbols-outlined text-[15px]">folder_copy</span>
+<span>6 repos confirmed with component lifecycles</span>
+</div>
+</div>
+<!-- Node.js: Verified -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">Node.js</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[12px] font-label-md bg-[#E2F6D5] text-[#054D28]">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'wght' 700;">check_circle</span>
+              Verified
+            </span>
+</div>
+<span class="font-code-snippet text-code-snippet text-on-surface font-bold">Score 0.74</span>
+</div>
+<div class="flex items-center text-tertiary font-body-sm text-[13px] gap-1">
+<span class="material-symbols-outlined text-[15px]">hub</span>
+<span>4 repos confirmed (Express &amp; NestJS trees)</span>
+</div>
+</div>
+<!-- TypeScript: Partial -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">TypeScript</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[12px] font-label-md bg-[#FFD11A] text-[#4A3B1C]">
+<span class="material-symbols-outlined text-[13px]">timelapse</span>
+              Partial
+            </span>
+</div>
+<span class="font-code-snippet text-code-snippet text-[#4A3B1C] font-bold">Score 0.52</span>
+</div>
+<div class="flex items-center text-on-surface-variant font-body-sm text-[13px] gap-1">
+<span class="material-symbols-outlined text-[15px] animate-spin">autorenew</span>
+<span>Scanning additional release branches...</span>
+</div>
+</div>
+<!-- PostgreSQL: Active Loading -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-[16px] text-on-surface font-bold">PostgreSQL</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[12px] font-label-md bg-secondary-container text-on-secondary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+              Inspecting
+            </span>
+</div>
+<span class="font-code-snippet text-code-snippet text-tertiary">Analyzing</span>
+</div>
+<div class="flex items-center text-primary font-body-sm text-[13px] gap-1.5">
+<span class="material-symbols-outlined text-[16px] animate-pulse">schema</span>
+<span>Checking commits &amp; SQL schema migrations...</span>
+</div>
+</div>
+<!-- Docker, Python, Flutter: Queued Pills -->
+<div class="p-3 bg-surface-container-low/60 rounded-xl flex flex-col gap-2">
+<span class="font-label-md text-label-md text-tertiary uppercase tracking-wider text-[11px]">Queued for parsing</span>
+<div class="flex flex-wrap gap-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span>Docker</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">code</span>
+<span>Python</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+<span>Flutter</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Safe Recovery Notice Card -->
+<div class="bg-[#E2F6D5] rounded-lg p-4 mb-5 flex items-start gap-3.5">
+<div class="w-9 h-9 rounded-full bg-[#054D28] text-surface-container-lowest flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-label-lg text-label-lg text-[#054D28] font-bold mb-0.5">Rate limits handled gracefully</h4>
+<p class="font-body-sm text-body-sm text-[#054D28]/90 leading-snug">
+        If GitHub pauses API requests, FairFold securely resumes automatically with zero loss of benchmark progress.
+      </p>
+</div>
+</div>
+<!-- Primary Floating Action Button -->
+<div class="flex flex-col gap-3">
+<button class="w-full h-12 rounded-full bg-primary-container hover:bg-[#8ED85F] active:scale-[0.99] text-on-surface font-headline-sm text-[16px] font-extrabold flex items-center justify-center gap-2 transition-all shadow-sm">
+<span>Continue in background</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-10 rounded-full text-on-surface-variant font-label-lg text-label-lg flex items-center justify-center gap-1.5 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+<span>Keep tab open to watch stream</span>
+</button>
+</div>
+</div>
+<script>
+  // Subtle interactive live-scan simulation
+  (function() {
+    let repoCount = 9;
+    const repoEl = document.getElementById('repo-counter');
+    if (repoEl) {
+      const interval = setInterval(() => {
+        if (repoCount < 14) {
+          repoCount++;
+          repoEl.textContent = repoCount.toString();
+        } else {
+          clearInterval(interval);
+        }
+      }, 4200);
+    }
+  })();
+</script></main></body></html>

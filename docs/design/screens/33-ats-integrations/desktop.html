@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed":"#1b1c19","surface-dim":"#dadada","on-tertiary-container":"#5c5c58","error":"#ba1a1a","secondary-fixed":"#e0e3de","tertiary":"#5e5f5a","primary-fixed":"#acf67c","primary":"#2f6c00","surface-container-lowest":"#ffffff","tertiary-fixed":"#e4e2dd","on-tertiary":"#ffffff","surface":"#f9f9f9","tertiary-container":"#d6d5cf","on-surface-variant":"#41493a","secondary-fixed-dim":"#c4c7c3","inverse-on-surface":"#f0f1f1","on-primary":"#ffffff","on-primary-fixed":"#092100","inverse-primary":"#91d963","error-container":"#ffdad6","on-surface":"#1a1c1c","background":"#f9f9f9","secondary":"#5b5f5c","surface-container-highest":"#e2e2e2","outline-variant":"#c1cab5","outline":"#717a68","primary-container":"#9fe870","surface-bright":"#f9f9f9","surface-container-high":"#e8e8e8","tertiary-fixed-dim":"#c8c6c1","surface-tint":"#2f6c00","on-error-container":"#93000a","on-secondary-container":"#5e625e","on-secondary-fixed":"#191c1a","on-secondary-fixed-variant":"#444844","on-primary-container":"#2e6900","on-primary-fixed-variant":"#225100","on-background":"#1a1c1c","surface-container":"#eeeeee","primary-fixed-dim":"#91d963","inverse-surface":"#2f3131","surface-container-low":"#f3f3f4","on-tertiary-fixed-variant":"#474743","secondary-container":"#dbded9","on-secondary":"#ffffff","surface-variant":"#e2e2e2","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-xl":"2.5rem","margin-mobile":"1.25rem","space-md":"1rem","space-sm":"0.5rem","margin":"3rem","gutter":"1.5rem","space-lg":"1.5rem","gutter-mobile":"1rem","space-xs":"0.25rem"},"fontFamily":{"body-sm":["Inter"],"headline-lg":["Manrope"],"headline-sm":["Manrope"],"label-lg":["Inter"],"headline-lg-mobile":["Manrope"],"label-md":["Inter"],"display-hero":["Manrope"],"headline-md":["Manrope"],"display-hero-mobile":["Manrope"],"body-lg":["Inter"],"code-snippet":["JetBrains Mono"],"body-md":["Inter"]},"fontSize":{"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"800"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"900"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"800"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"900"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"code-snippet":["13px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center justify-between border-b border-surface-container-high"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container"><span class="material-symbols-outlined text-[20px]">verified_user</span></div><div><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface block leading-tight">FairFold</span><span class="font-label-md text-label-md text-outline uppercase tracking-wider block">Recruiter Core</span></div></div><div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-code-snippet text-[11px]"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>LIVE</div></div><div class="px-space-md py-space-md"><div class="px-space-sm mb-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-outline">Workspaces</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a class="flex items-center px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="candidate-search-and-sourcing" href="#">Candidate Search &amp; Sourcing</a><a class="flex items-center px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="ast-verification-queue" href="#">AST Verification Queue</a><a class="flex items-center px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="active-pipeline-and-grants" href="#">Active Pipeline &amp; Grants</a><a class="flex items-center px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="ats-integrations-and-api-key-governance" href="#">ATS Integrations &amp; Keys</a></nav></div></div><div class="p-space-md border-t border-surface-container-high bg-surface-container-low/50"><div class="bg-surface-container-lowest rounded-2xl p-space-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)] mb-space-sm"><div class="flex items-center justify-between mb-1"><span class="font-label-md text-label-md text-outline">Zero-Knowledge Pipeline</span><span class="font-code-snippet text-[11px] text-primary font-semibold">v2.8-sec</span></div><div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden"><div class="bg-primary h-full rounded-full" style="width: 100%"></div></div><div class="flex justify-between items-center mt-1.5"><span class="font-code-snippet text-[10px] text-tertiary">SHA-256 Validated</span><span class="font-label-md text-label-md text-primary font-semibold">100% Blind</span></div></div><div class="flex items-center justify-between px-space-sm"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-code-snippet text-code-snippet text-on-surface-variant">TEE SGX ACTIVE</span></div><span class="font-code-snippet text-[11px] text-outline">US-EAST</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><div class="fixed top-0 left-72 right-0 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-8 px-space-lg bg-surface-container-highest flex items-center justify-between font-code-snippet text-[11px] text-on-surface-variant border-b border-surface-container-high"><div class="flex items-center gap-space-md"><span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>TEE ATTESTATION: OK</span><span class="text-outline">|</span><span>ROOT_PUBKEY: 0x9fA2...c49B</span><span class="text-outline">|</span><span>ZK-SNARK LATENCY: 42ms</span></div><div class="flex items-center gap-space-md"><span>AST EVAL ENGINE: SYNCHRONIZED</span><span class="text-outline">|</span><span class="text-primary font-semibold">CIPHER: ED25519-CHACHA20</span></div></div><header class="h-16 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="h-9 px-space-md rounded-full bg-surface-container-low flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="font-code-snippet text-code-snippet text-on-surface">cluster://fairfold-primary</span></div></div><div class="flex items-center gap-space-sm"><div class="h-9 px-space-md rounded-full bg-surface-container-low text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">verified</span><span class="font-label-md text-label-md font-semibold">Datadog Engineering</span><span class="font-code-snippet text-[11px] text-outline">[Ed25519 Verified]</span></div><div class="h-9 px-space-md rounded-full bg-primary-container text-on-primary-container flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">visibility_off</span><span class="font-label-md text-label-md font-semibold tracking-tight">Demographic Blinding: STRICT</span><span class="font-code-snippet text-[10px] bg-surface-container-lowest/80 px-1.5 py-0.5 rounded-full text-on-surface font-semibold">ISO 27001</span></div><button class="h-9 pl-space-md pr-space-xs rounded-full bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-high transition-colors flex items-center gap-2" type="button"><span class="font-label-md text-label-md text-on-surface font-medium">Recruiter Portal</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></button></div></header></div><main class="w-full pt-24 pb-12 px-space-lg bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- 1. Workspace Header & Sub-Bar -->
+<div class="flex flex-col gap-4 mb-6">
+<div class="flex items-center gap-2 font-code-snippet text-xs text-on-surface-variant">
+<span class="hover:text-primary cursor-pointer transition-colors">Recruiter Workspace</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface font-semibold">ATS Integrations &amp; Key Governance</span>
+<span class="ml-2 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[10px] font-semibold tracking-wider">TENANT_ID: DD-US-PROD-09</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">ATS Integrations &amp; Cryptographic API Key Governance</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-4xl mt-1">
+          Configure bilateral synchronization bridges with enterprise ATS platforms (Greenhouse, Lever, Workday, Ashby), enforce hardware demographic scrubbing before payload dispatch, rotate Ed25519 tenant signature keys, and monitor real-time webhook health.
+        </p>
+</div>
+<div class="flex items-center gap-2.5 flex-wrap shrink-0">
+<button class="h-10 px-4 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md hover:bg-surface-container-high transition-colors flex items-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">download</span>
+<span>Export Webhook Log (.json)</span>
+</button>
+<button class="h-10 px-4 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md hover:bg-surface-container-high transition-colors flex items-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">key</span>
+<span>Rotate Root Key</span>
+</button>
+<button class="h-10 px-5 rounded-full bg-primary-container text-on-primary-container text-label-md font-label-md hover:bg-primary-fixed transition-all flex items-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">add_link</span>
+<span class="font-bold">+ Add New ATS Connection</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 2. Monospace Telemetry Status Strip -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-3 shadow-sm mb-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] font-code-snippet">
+<div class="flex items-center gap-4 flex-wrap">
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>INTEGRATION_GATEWAY // BILATERAL_ATS_SYNC v2.4</span>
+</div>
+<span class="text-outline-variant hidden sm:inline">|</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="text-tertiary">TENANT:</span>
+<span class="text-on-surface font-semibold">Datadog Talent Infra</span>
+<span class="text-primary text-[10px]">[Ed25519 Co-Signed]</span>
+</div>
+<span class="text-outline-variant hidden md:inline">|</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="text-tertiary">ENCLAVE_SHIELD:</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container/40 text-on-primary-container font-semibold">DEMOGRAPHIC_STRIPPING_ENFORCED (ISO 27001)</span>
+</div>
+</div>
+<div class="flex items-center gap-4 flex-wrap">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="text-tertiary">ACTIVE_CONNECTIONS:</span>
+<span class="text-on-surface font-bold">3 CONFIGURED</span>
+</div>
+<span class="text-outline-variant">|</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="text-tertiary">WEBHOOK_SLA:</span>
+<span class="text-primary font-bold">99.98%</span>
+<span class="text-tertiary">(Avg 38ms latency)</span>
+</div>
+<div class="flex items-center gap-2 pl-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[10px] font-bold">ZK-PROOF: ATTESTED</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary text-[10px]">CIPHER: Ed25519-AES-256-GCM</span>
+</div>
+</div>
+</div>
+<!-- 3. High-Density Integration Health Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-tertiary block">Active ATS Bridges</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">3 Connected</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low/60 rounded-xl p-2.5">
+<div class="flex items-center justify-between font-code-snippet text-[11px] mb-1">
+<span class="text-on-surface">Greenhouse <span class="text-primary font-semibold">[Primary]</span></span>
+<span class="text-on-surface-variant">Lever • Ashby</span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-tertiary font-body-sm">
+<span>0 egress leaks detected</span>
+<span class="text-primary font-semibold">100% Blind TEE</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-tertiary block">Demographic Scrubbing</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-md text-headline-md text-primary">100.0%</span>
+<span class="font-code-snippet text-[11px] text-primary font-semibold">SOC2 Type II</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low/60 rounded-xl p-2.5">
+<div class="flex items-center justify-between font-label-md text-label-md mb-1">
+<span class="text-on-surface font-semibold">4,820 Records Sanitized</span>
+<span class="text-primary font-code-snippet text-xs">Zero Residue</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-tertiary block">Cryptographic API Keys</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">4 Active</span>
+<span class="font-body-sm text-body-sm text-tertiary">Keys &amp; Tokens</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">vpn_key</span>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low/60 rounded-xl p-2.5 flex items-center justify-between font-code-snippet text-[11px]">
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">2 Ed25519 • 1 Webhook • 1 Ingest</span>
+<span class="text-tertiary">Next rotation cycle: 18d</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-tertiary block">Webhook Velocity &amp; Sync</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-md text-headline-md text-on-surface">34ms</span>
+<span class="font-label-md text-label-md text-primary font-semibold">P99 Bilateral</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low/60 rounded-xl p-2.5 flex items-center justify-between text-[11px] font-code-snippet">
+<span class="text-on-surface-variant">14 dossiers synchronized today</span>
+<span class="text-primary font-bold">0 Failed Egress</span>
+</div>
+</div>
+</div>
+<!-- 4. Parametric Tab & Navigation Bar -->
+<div class="bg-surface-container-lowest rounded-2xl p-2 shadow-sm mb-6 flex flex-col xl:flex-row xl:items-center justify-between gap-3">
+<div class="flex items-center gap-1 overflow-x-auto py-1">
+<button class="h-9 px-4 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center gap-2 shrink-0" type="button">
+<span>Connected ATS Platforms</span>
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[10px] flex items-center justify-center font-code-snippet">3</span>
+</button>
+<button class="h-9 px-4 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md flex items-center gap-2 shrink-0" type="button">
+<span>Cryptographic API Keys &amp; Secrets</span>
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface-variant text-[10px] flex items-center justify-center font-code-snippet">4</span>
+</button>
+<button class="h-9 px-4 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md shrink-0" type="button">
+        Demographic Stripping &amp; Scrubbing Rules
+      </button>
+<button class="h-9 px-4 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md shrink-0" type="button">
+        Webhook Event Delivery Log (24h)
+      </button>
+<button class="h-9 px-4 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md shrink-0" type="button">
+        Security &amp; IP Whitelisting
+      </button>
+</div>
+<div class="flex items-center gap-2 shrink-0 px-1">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-full bg-surface-container-low text-on-surface text-body-sm font-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-on-surface" placeholder="Search endpoints, keys, reqs..." type="text"/>
+</div>
+<button class="h-9 px-3 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1.5 shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px]">network_ping</span>
+<span>Test Webhook Ping</span>
+</button>
+<button class="h-9 px-3 rounded-full bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors font-label-md text-label-md flex items-center gap-1.5 shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px]">pause_circle</span>
+<span>Pause All Egress</span>
+</button>
+</div>
+</div>
+<!-- 5. Two-Column Main Content Layout (60% Left, 40% Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT COLUMN (60% ~ 7 cols in 12-col grid) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Section A: Primary ATS Integrations Feed -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">sync_alt</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Configured ATS Integrations</h2>
+</div>
+<span class="font-code-snippet text-xs text-on-surface-variant">Bilateral Harvest + Ingest Engine</span>
+</div>
+<!-- 1. Greenhouse Integration Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-[#008552]/10 flex items-center justify-center text-[#008552]">
+<span class="material-symbols-outlined text-[28px]">eco</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Greenhouse Harvest API</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-code-snippet text-[10px] font-bold">LIVE &amp; HEALTHY</span>
+</div>
+<span class="font-code-snippet text-xs text-tertiary">v2.4 OAuth2 + HMAC SHA-256 Bilateral Ingestion</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-code-snippet text-xs text-primary font-semibold">200 OK • Ping 42s ago</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+<div class="bg-surface-container-low rounded-xl p-3.5">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-tertiary">Requisition Mapping</span>
+<span class="font-code-snippet text-[11px] text-primary font-bold">12 Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Staff Distributed Systems, Senior Backend Architect, Principal Frontend, Cloud Infra Pod</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3.5">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-tertiary">Demographic Blinding Guardrail</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-code-snippet text-[10px] font-bold">STRICT_STRIP_ACTIVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Names masked as <span class="font-code-snippet font-semibold">#FF-XXXX</span>; GitHub usernames hidden until Stage 3 bilateral approval.</p>
+</div>
+</div>
+<!-- Feature Toggle row -->
+<div class="bg-surface-container-low/60 rounded-xl p-3.5 mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Verified Proof Scorecard Injection</span>
+<span class="font-body-sm text-xs text-on-surface-variant block">Auto-pushes AST fit % and compiler proof hashes directly into Greenhouse Custom Scorecard fields</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code-snippet text-xs text-primary font-semibold">ENABLED</span>
+<div class="w-11 h-6 bg-primary rounded-full p-1 cursor-pointer flex items-center justify-end">
+<div class="w-4 h-4 rounded-full bg-surface-container-lowest"></div>
+</div>
+</div>
+</div>
+<!-- Technical Endpoint Details -->
+<div class="bg-surface-container rounded-xl p-3 font-code-snippet text-xs text-on-surface-variant mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2 truncate">
+<span class="text-tertiary">ENDPOINT:</span>
+<span class="text-on-surface font-medium truncate">https://harvest.greenhouse.io/v1/applications</span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="text-tertiary">TOKEN:</span>
+<span class="text-on-surface font-mono">gh_live_7f9a...83d2</span>
+<button class="text-primary hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span></button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<button class="h-9 px-4 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Configure Field Mapping</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">play_circle</span>
+<span>Test Payload</span>
+</button>
+</div>
+<button class="h-9 px-3 rounded-full text-error hover:bg-error-container hover:text-on-error-container transition-colors font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">pause</span>
+<span>Pause Sync</span>
+</button>
+</div>
+</div>
+<!-- 2. Lever Integration Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-[#0060F0]/10 flex items-center justify-center text-[#0060F0]">
+<span class="material-symbols-outlined text-[28px]">account_tree</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Lever Postings &amp; Candidates API</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-code-snippet text-[10px] font-bold">STAGING READY</span>
+</div>
+<span class="font-code-snippet text-xs text-tertiary">v1 REST Webhooks • Ed25519 HMAC Signing Active</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-code-snippet text-xs text-secondary font-semibold">Staging Sandbox (3 Reqs)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+            Mapped strictly to Datadog EMEA pods (London &amp; Dublin). Ingestion filters out all personal links, LinkedIn canonical URIs, and education chronologies in the sandbox TEE.
+          </p>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<button class="h-9 px-4 rounded-full bg-primary-container text-on-primary-container hover:bg-primary-fixed transition-colors font-label-md text-label-md flex items-center gap-1.5 font-semibold" type="button">
+<span class="material-symbols-outlined text-[16px]">upgrade</span>
+<span>Promote to Production</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">settings</span>
+<span>Edit Scopes</span>
+</button>
+</div>
+<span class="font-code-snippet text-xs text-tertiary">Payload Secret: `lev_sec_441...fa2`</span>
+</div>
+</div>
+<!-- 3. Workday Connector Card -->
+<div class="bg-surface-container-low/70 rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[28px]">corporate_fare</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Workday Human Capital Management</h4>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-code-snippet text-[10px]">READY TO PAIR</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Enterprise Mutual TLS (mTLS) + OAuth2 SAML Bearer Flow connector available.</p>
+</div>
+</div>
+<button class="h-10 px-5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-2 shrink-0 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">cable</span>
+<span>Connect Workday HCM</span>
+</button>
+</div>
+</div>
+<!-- Section B: Cryptographic API Keys & Ingestion Secrets Section -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">lock</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Cryptographic API Keys &amp; Ingestion Secrets</h2>
+</div>
+<button class="h-8 px-3 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Generate Ingest Key</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          All ATS dispatches and webhook receipts are signed with isolated hardware tenant keys stored in AWS Nitro Enclaves. Private keys never leave the secure boundary.
+        </p>
+<!-- Keys List -->
+<div class="flex flex-col gap-3">
+<!-- Key 1 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Production Ed25519 Signing Key (Tenant Root)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-code-snippet text-[10px] font-bold">ACTIVE</span>
+</div>
+<div class="flex items-center gap-3 mt-1 font-code-snippet text-xs text-on-surface-variant">
+<span>Fingerprint: <span class="text-on-surface font-semibold">ed25519:7f9a4b2c...881a</span></span>
+<span class="text-outline">|</span>
+<span>Created: Jan 12, 2025</span>
+<span class="text-outline">|</span>
+<span class="text-primary font-semibold">Rotation due in 18d</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="h-8 px-3 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md hover:bg-surface-container-high transition-colors" type="button">Rotate Key</button>
+<button class="h-8 px-3 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md hover:bg-surface-container-high transition-colors" type="button">View PubKey</button>
+</div>
+</div>
+<!-- Key 2 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">webhook</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Greenhouse Harvest Webhook Secret</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-code-snippet text-[10px] font-bold">ACTIVE</span>
+</div>
+<div class="flex items-center gap-3 mt-1 font-code-snippet text-xs text-on-surface-variant">
+<span>Secret ID: <span class="text-on-surface font-semibold">whsec_98f12a...7c31</span></span>
+<span class="text-outline">|</span>
+<span class="text-tertiary">Scopes: candidate.stage_change, interview.scheduled</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="h-8 px-3 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md hover:bg-surface-container-high transition-colors" type="button">Roll Secret</button>
+</div>
+</div>
+<!-- Key 3 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container/40 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Ephemeral Recruiter Ingest Token (Firecracker TEE)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-code-snippet text-[10px] font-bold">AUTO-ROTATING</span>
+</div>
+<div class="flex items-center gap-3 mt-1 font-code-snippet text-xs text-on-surface-variant">
+<span>Token: <span class="text-on-surface font-semibold">tok_fc_8820...4d9e</span></span>
+<span class="text-outline">|</span>
+<span>TTL: 72 hours</span>
+<span class="text-outline">|</span>
+<span class="text-primary">Expires in 31h 14m</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="h-8 px-3 rounded-full bg-surface-container-lowest text-on-surface text-label-md font-label-md hover:bg-surface-container-high transition-colors" type="button">Revoke</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (40% ~ 5 cols in 12-col grid) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Section A: Demographic Scrubbing & Data Guardrail Inspector -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">visibility_off</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Demographic Scrubbing Inspector</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-code-snippet text-[10px] font-bold">SOC2 AUDITED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Interactive view of payload transformation inside the hardware TEE before HTTP dispatch to Greenhouse or Lever:
+        </p>
+<!-- Visual Schema Transformation Flow -->
+<div class="flex flex-col gap-3 font-code-snippet text-xs">
+<!-- Step 1: Raw Ingest (Blocked) -->
+<div class="bg-error-container/30 rounded-xl p-3.5">
+<div class="flex items-center justify-between mb-2">
+<span class="font-bold text-on-error-container flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-error">block</span>
+                INCOMING RAW RECORD (BLOCKED IN ENCLAVE RAM)
+              </span>
+<span class="text-[10px] text-error font-semibold">HARDWARE QUARANTINED</span>
+</div>
+<div class="space-y-1 text-on-surface-variant pl-4">
+<div class="line-through opacity-70">"legal_name": "Elena Rostova"</div>
+<div class="line-through opacity-70">"headshot_avatar_url": "https://cdn.example/p/92.jpg"</div>
+<div class="line-through opacity-70">"gender_markers": "Female / She-Her"</div>
+<div class="line-through opacity-70">"university": "Stanford University (Class of 2017)"</div>
+</div>
+</div>
+<!-- Flow Arrow with TEE Badge -->
+<div class="flex items-center justify-center gap-2 py-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">south</span>
+<span class="font-code-snippet text-[11px] bg-surface-container-high px-2 py-0.5 rounded-full text-on-surface font-semibold">Firecracker Nitro Enclave (Demographic Stripper v2.8)</span>
+<span class="material-symbols-outlined text-[18px]">south</span>
+</div>
+<!-- Step 2: Outgoing ATS Payload (Approved) -->
+<div class="bg-primary-container/20 rounded-xl p-3.5">
+<div class="flex items-center justify-between mb-2">
+<span class="font-bold text-on-primary-container flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+                OUTGOING ATS PAYLOAD (DISPATCHED TO ATS)
+              </span>
+<span class="text-[10px] text-primary font-bold">100% BLIND COMPLIANT</span>
+</div>
+<div class="space-y-1 text-on-surface bg-surface-container-lowest p-2.5 rounded-lg">
+<div><span class="text-tertiary">"name":</span> <span class="text-primary font-bold">"FairFold Blind Candidate #FF-9824"</span></div>
+<div><span class="text-tertiary">"email":</span> <span class="text-on-surface">"relay-ff9824@blind.fairfold.dev"</span></div>
+<div><span class="text-tertiary">"custom_fields": {</span></div>
+<div class="pl-4"><span class="text-tertiary">"ast_score":</span> <span class="text-primary font-semibold">"96% (Top 1% Global Codebase)"</span>,</div>
+<div class="pl-4"><span class="text-tertiary">"verified_skills":</span> <span class="text-on-surface">["TypeScript AST (99%)", "Go Concurrency (91%)"]</span>,</div>
+<div class="pl-4"><span class="text-tertiary">"prelim_screens_waived":</span> <span class="text-primary font-bold">true</span>,</div>
+<div class="pl-4"><span class="text-tertiary">"salary_floor_cleared":</span> <span class="text-primary font-bold">true</span> <span class="text-tertiary">(Min $200k base satisfied)</span></div>
+<div><span class="text-tertiary">}</span></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-xl bg-surface-container-low font-body-sm text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">policy</span>
+<span>Demographic stripping audited under AICPA SOC 2 Type II &amp; ISO/IEC 27001:2022 by Schellman.</span>
+</div>
+</div>
+<!-- Section B: Live Webhook Delivery & Event Stream -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">terminal</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Live Webhook Egress Stream</h2>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<!-- Terminal Log Box -->
+<div class="bg-[#121414] text-[#E5E7EB] rounded-xl p-4 font-code-snippet text-xs leading-relaxed space-y-2.5 overflow-hidden">
+<div class="flex items-start gap-2">
+<span class="text-primary shrink-0">[14:22:18 UTC]</span>
+<span>POST /v1/applications -&gt; <span class="text-primary-container font-bold">200 OK</span> <span class="text-tertiary">(32ms)</span> - Payload <span class="text-[#acf67c]">#FF-9824</span> dispatched to Greenhouse Req <span class="text-tertiary">#DD-8812</span></span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-primary shrink-0">[14:05:02 UTC]</span>
+<span>POST /v1/scorecards -&gt; <span class="text-primary-container font-bold">200 OK</span> <span class="text-tertiary">(28ms)</span> - Verified AST scores co-signed by Ed25519 root</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-primary shrink-0">[13:48:55 UTC]</span>
+<span>POST /v1/candidates -&gt; <span class="text-primary-container font-bold">200 OK</span> <span class="text-tertiary">(41ms)</span> - Candidate <span class="text-[#acf67c]">#FF-6102</span> stage advanced: Technical Review</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-tertiary shrink-0">[12:15:30 UTC]</span>
+<span>KEY_ROTATION_CHECK -&gt; <span class="text-primary font-bold">OK</span> - Ed25519 tenant key integrity verified [SHA: 8f0a...3e99]</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<button class="h-8 px-3 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Download Raw Webhook Log (.ndjson)</span>
+</button>
+<button class="h-8 px-3 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Simulate Webhook Event</span>
+</button>
+</div>
+</div>
+<!-- Section C: Emergency Circuit Breaker -->
+<div class="bg-error-container/30 rounded-2xl p-5 shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-2 text-on-error-container">
+<span class="material-symbols-outlined text-error text-[22px]">warning</span>
+<h3 class="font-headline-sm text-headline-sm text-on-error-container">Emergency ATS Kill Switch</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Instantly sever all egress webhooks and invalidate active API tokens in the event of an upstream ATS compromise or security incident.
+        </p>
+<button class="h-10 px-4 rounded-full bg-surface-container-lowest text-error font-label-md text-label-md hover:bg-error hover:text-on-error transition-all flex items-center justify-center gap-2 font-bold shadow-sm self-start" type="button">
+<span class="material-symbols-outlined text-[18px]">power_settings_new</span>
+<span>1-Click Sever All ATS Connections</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high py-space-md px-space-lg"><div class="flex flex-col md:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-md flex-wrap"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">security</span><span class="font-label-md text-label-md text-on-surface font-semibold">FairFold Recruiter Portal</span></div><span class="text-outline text-xs hidden md:inline">•</span><span class="font-label-md text-label-md text-on-surface-variant">Demographic Stripping Audited (SOC2 Type II Verified)</span><span class="text-outline text-xs hidden md:inline">•</span><span class="font-label-md text-label-md text-on-surface-variant">ISO/IEC 27001 ISMS Certified</span></div><div class="flex items-center gap-space-md font-code-snippet text-[12px] text-tertiary"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="text-on-surface-variant">ATS Sync: Greenhouse &amp; Lever Active</span></div><span>HASH: 8F0A...3E99</span></div></div></footer></div></body></html>

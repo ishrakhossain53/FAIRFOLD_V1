@@ -52,11 +52,11 @@ The core model has thirteen tables; verified skills are stored as rows with thei
 
 | Table | Purpose | Key fields |
 | --- | --- | --- |
-| users | Account for any role | id, email, role (candidate, recruiter, admin), email\_verified, created\_at |
+| users | Account for any role | id, email, role (candidate, recruiter, admin), email\_verified\_at, created\_at |
 | candidate\_profiles | Candidate details | user\_id, name, headline, location, github\_username, consent\_scan\_at |
 | recruiter\_profiles | Recruiter and company details | user\_id, company\_name, company\_site |
 | cvs | Uploaded CV files | id, user\_id, storage\_key, parsed\_json, uploaded\_at |
-| skills | Fixed skill taxonomy | id, name, aliases, category |
+| skills | Fixed skill taxonomy | id, canonical\_name, aliases, category, github\_signal |
 | claimed\_skills | Skills extracted from the CV | candidate\_id, skill\_id, source\_text, confirmed\_by\_candidate |
 | github\_repos | Public repositories scanned | id, candidate\_id, github\_repo\_id, name, is\_fork, languages (JSONB), last\_scanned\_at |
 | skill\_verifications | Result per candidate and skill | candidate\_id, skill\_id, status (verified, partial, not\_verified), confidence, rule\_version, scanned\_at |
@@ -64,7 +64,7 @@ The core model has thirteen tables; verified skills are stored as rows with thei
 | jobs | Job posts | id, recruiter\_id, title, description, status, match\_mode, min\_match |
 | job\_required\_skills | Skills a job requires | job\_id, skill\_id, required (true or false) |
 | applications | Candidate applications | id, job\_id, candidate\_id, status, matched\_skills (JSONB), missing\_skills (JSONB), created\_at |
-| audit\_log | Decision records | id, actor, action, subject, rule\_version, payload (JSONB), created\_at |
+| audit\_log | Decision records | id, actor\_pseudonym, action, subject, rule\_version, payload (JSONB), created\_at |
 
 **Rules**
 
@@ -87,17 +87,7 @@ The worker runs one job per candidate; a rate-limit pause resumes where it stopp
 - Check authorship with `GET /repos/{owner}/{repo}/commits?author={login}`.
 - Cache responses with ETags and check remaining quota before each batch.
 
-**Scoring (proposed starting weights, to be calibrated on the labelled set)**
-
-| Evidence | Weight |
-| --- | --- |
-| Authored source files that use the skill | 0.50 |
-| Authored commits touching those files | 0.20 |
-| Entry in a dependency manifest | 0.15 |
-| Recent activity (last 24 months) | 0.10 |
-| Skill found in more than one repository | 0.05 |
-
-A skill is verified at a confidence of 0.60 or higher and partial from 0.30 to below 0.60; both cut-offs are starting values and need calibration. Repositories flagged as clones or trivial contribute no weight.
+**Scoring.** Weights, thresholds and eligibility live in [VERIFICATION_RULES.md](VERIFICATION_RULES.md), the only place the numbers are defined, so a rule-version bump touches one file. Repositories flagged as clones or trivial contribute no weight.
 
 ## 6. API design
 
@@ -106,6 +96,7 @@ The API is REST over HTTPS with JSON bodies, versioned under `/api/v1`. Roles ar
 | Method and path | Role | Purpose |
 | --- | --- | --- |
 | POST /auth/signup, POST /auth/login | Public | Create an account; sign in |
+| POST /auth/refresh | Public | Exchange a refresh token for new access and refresh tokens |
 | GET /auth/github/callback | Candidate | Complete GitHub OAuth and store a read-only token |
 | PUT /me/profile | Any | Update basic profile information |
 | POST /me/cv | Candidate | Upload a CV; starts parsing |
@@ -122,6 +113,7 @@ The API is REST over HTTPS with JSON bodies, versioned under `/api/v1`. Roles ar
 | GET /jobs/{id}/eligibility | Candidate | Returns matched and missing required skills |
 | POST /jobs/{id}/apply | Candidate | Apply; rejected with the missing skills if the gate fails |
 | GET /jobs/{id}/applications | Recruiter (owner) | Applicants with matched and missing skills |
+| GET /me | Any | Download everything held about the account (data-rights export) |
 | DELETE /me | Any | Delete account and data |
 
 **Conventions**

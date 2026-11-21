@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"primary-fixed-dim":"#91d963","inverse-surface":"#2f3131","on-primary-container":"#2e6900","on-surface-variant":"#41493a","on-tertiary-fixed":"#1b1c19","on-background":"#1a1c1c","tertiary-fixed":"#e4e2dd","primary-fixed":"#acf67c","on-error":"#ffffff","primary-container":"#9fe870","surface-container-lowest":"#ffffff","inverse-on-surface":"#f0f1f1","surface-variant":"#e2e2e2","tertiary-fixed-dim":"#c8c6c1","background":"#f9f9f9","inverse-primary":"#91d963","error":"#ba1a1a","on-surface":"#1a1c1c","surface-container-low":"#f3f3f4","on-primary":"#ffffff","secondary-container":"#dbded9","surface-dim":"#dadada","surface-tint":"#2f6c00","surface-container-highest":"#e2e2e2","tertiary-container":"#d6d5cf","on-secondary-fixed":"#191c1a","on-error-container":"#93000a","on-tertiary":"#ffffff","on-primary-fixed-variant":"#225100","surface-bright":"#f9f9f9","on-secondary-container":"#5e625e","on-primary-fixed":"#092100","surface-container":"#eeeeee","surface-container-high":"#e8e8e8","secondary-fixed-dim":"#c4c7c3","on-secondary":"#ffffff","secondary":"#5b5f5c","outline":"#717a68","on-tertiary-fixed-variant":"#474743","secondary-fixed":"#e0e3de","error-container":"#ffdad6","tertiary":"#5e5f5a","surface":"#f9f9f9","on-tertiary-container":"#5c5c58","on-secondary-fixed-variant":"#444844","primary":"#2f6c00","outline-variant":"#c1cab5"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"margin":"3rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-md":"1rem","space-xl":"2.5rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter":"1.5rem","margin-mobile":"1.25rem"},"fontFamily":{"headline-lg-mobile":["Manrope"],"display-hero-mobile":["Manrope"],"label-md":["Inter"],"label-lg":["Inter"],"headline-md":["Manrope"],"display-hero":["Manrope"],"headline-sm":["Manrope"],"body-lg":["Inter"],"body-sm":["Inter"],"code-snippet":["JetBrains Mono"],"headline-lg":["Manrope"],"body-md":["Inter"]},"fontSize":{"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"800"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"900"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"800"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"900"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"code-snippet":["13px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen"><header class="sticky top-0 z-50 w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1360px] mx-auto px-margin flex items-center justify-between"><a class="flex items-center gap-space-sm group" data-path="landing-page" href="#"><div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[24px]">data_object</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-extrabold">FairFold</span></a><nav class="hidden md:flex items-center gap-space-xl" data-active-classes="text-on-surface font-semibold"><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="how-it-works" href="#">How it works</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="for-recruiters" href="#">For recruiters</a><a class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="login" href="#">Log in</a></nav><div class="flex items-center gap-space-md"><a class="h-12 px-space-lg rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg flex items-center justify-center hover:opacity-95 transition-all shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="sign-up" href="#">Sign up</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface max-w-[1360px] mx-auto px-margin"><div class="flex flex-col w-full">
+<!-- Eyebrow & Headline Introduction Section -->
+<section class="relative w-full pb-space-xl overflow-hidden">
+<div class="flex flex-col gap-space-md max-w-4xl">
+<div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md tracking-wider uppercase font-semibold">Transparency &amp; Methodology</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight font-black leading-tight">
+        How skill verification works
+      </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-3xl leading-relaxed">
+        FairFold proves developer capabilities by inspecting authentic code, commit histories, and package dependencies in public repositories. Here is exactly how the scoring algorithm works, what counts as proof, and where our boundaries lie.
+      </p>
+</div>
+<!-- Quick Stat Badges -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md mt-space-xl">
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-primary font-black">100%</span>
+<span class="font-label-md text-label-md text-secondary">Deterministic scoring</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-black">AST-Level</span>
+<span class="font-label-md text-label-md text-secondary">Syntax tree inspection</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-black">Read-Only</span>
+<span class="font-label-md text-label-md text-secondary">OAuth public scope</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-DEFAULT flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-on-primary-container font-black">Zero-Bias</span>
+<span class="font-label-md text-label-md text-secondary">Demographic blind logic</span>
+</div>
+</div>
+</section>
+<!-- Section 1: Visual 5-Step Pipeline Diagram -->
+<section class="w-full py-space-xl">
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Execution Workflow</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-black">The Verification Pipeline</h2>
+<p class="font-body-md text-body-md text-secondary">From curriculum vitae ingest to cryptographic proof emission in five deterministic steps.</p>
+</div>
+<!-- 5-Step Horizontal Card Grid -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-md relative">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm text-on-secondary-fixed font-black">01</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">description</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Read CV Skills</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+            Extracts declared skills, library proficiencies, and technical taxonomies via our natural-language AST skill parser.
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs text-secondary-container">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container font-code-snippet text-code-snippet text-on-surface">Input Ingest</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm text-on-secondary-fixed font-black">02</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">source_notes</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Scan Public Repos</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+            Connects strictly via read-only public OAuth. Walks git file hierarchies, blobs, and public release artifacts without touching private code.
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container font-code-snippet text-code-snippet text-on-surface">Public Trees</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm text-on-secondary-fixed font-black">03</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">account_tree</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Collect Evidence</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+            Attributes Git commit authorship hashes, inspects language imports, and tallies candidate-authored functional lines of code.
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container font-code-snippet text-code-snippet text-on-surface">AST Imports</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-headline-sm text-headline-sm text-on-primary-container font-black">04</span>
+<span class="material-symbols-outlined text-primary text-[24px]">analytics</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Match &amp; Score</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+            Computes a deterministic algorithmic confidence score from 0.00 to 1.00 based on the verified evidence weight matrix.
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2.5 py-1 rounded-full bg-primary-container/40 font-code-snippet text-code-snippet text-on-primary-container font-bold">0.00 – 1.00</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm text-on-secondary-fixed font-black">05</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Publish Profile</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+            Emits an immutable verification digest accompanied by direct GitHub code references candidates can securely share.
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="inline-block px-2.5 py-1 rounded-full bg-surface-container font-code-snippet text-code-snippet text-on-surface">Audit Digest</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: "What counts as evidence" Rubric Table -->
+<section class="w-full py-space-xl">
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Mathematical Weights</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-black">What counts as evidence</h2>
+<p class="font-body-md text-body-md text-secondary">Every verified credential maps strictly to inspectable code characteristics with capped ceiling weights.</p>
+</div>
+<!-- Structured Rubric Matrix in a Clean Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[680px]">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-md text-label-md uppercase">
+<th class="py-space-md px-space-md rounded-l-DEFAULT">Evidence Vector</th>
+<th class="py-space-md px-space-md">Max Weight</th>
+<th class="py-space-md px-space-md">Signal Impact</th>
+<th class="py-space-md px-space-md rounded-r-DEFAULT">Audit Criteria &amp; Verification Rule</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="transition-colors hover:bg-surface-container-low/50">
+<td class="py-space-md px-space-md font-headline-sm text-body-md text-on-surface font-bold">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Source files authored using the skill
+              </div>
+</td>
+<td class="py-space-md px-space-md font-code-snippet text-code-snippet text-primary font-bold">Up to +0.50</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold">Strong</span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-secondary">
+              Authentic source files (<code class="text-on-surface font-code-snippet">.ts</code>, <code class="text-on-surface font-code-snippet">.jsx</code>, <code class="text-on-surface font-code-snippet">.py</code>, etc.) written by the candidate demonstrating active application of framework modules and idioms.
+            </td>
+</tr>
+<tr class="transition-colors hover:bg-surface-container-low/50">
+<td class="py-space-md px-space-md font-headline-sm text-body-md text-on-surface font-bold">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Commits authored by candidate
+              </div>
+</td>
+<td class="py-space-md px-space-md font-code-snippet text-code-snippet text-on-surface font-bold">Up to +0.20</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold">Medium</span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-secondary">
+              Commits signed or authored under the candidate's verified Git email address matching their registered developer identity across commit trees.
+            </td>
+</tr>
+<tr class="transition-colors hover:bg-surface-container-low/50">
+<td class="py-space-md px-space-md font-headline-sm text-body-md text-on-surface font-bold">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                Dependency manifest entry
+              </div>
+</td>
+<td class="py-space-md px-space-md font-code-snippet text-code-snippet text-on-surface font-bold">Up to +0.15</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-md text-label-md font-semibold">Baseline</span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-secondary">
+              Listed inside <code class="text-on-surface font-code-snippet">package.json</code>, <code class="text-on-surface font-code-snippet">requirements.txt</code>, or <code class="text-on-surface font-code-snippet">go.mod</code>. <span class="font-semibold text-error">Never qualifies a skill on its own</span> without authored files.
+            </td>
+</tr>
+<tr class="transition-colors hover:bg-surface-container-low/50">
+<td class="py-space-md px-space-md font-headline-sm text-body-md text-on-surface font-bold">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+                Recency of activity
+              </div>
+</td>
+<td class="py-space-md px-space-md font-code-snippet text-code-snippet text-primary font-bold">Up to +0.10</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold">Boost</span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-secondary">
+              Continuous commit cadence and authored files pushed within the last 6 to 12 months, reflecting contemporary framework familiarity.
+            </td>
+</tr>
+<tr class="transition-colors hover:bg-surface-container-low/50">
+<td class="py-space-md px-space-md font-headline-sm text-body-md text-on-surface font-bold">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+                Multi-repository breadth
+              </div>
+</td>
+<td class="py-space-md px-space-md font-code-snippet text-code-snippet text-primary font-bold">Up to +0.05</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold">Boost</span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-secondary">
+              Skill demonstrates versatility by appearing across multiple distinct projects, decoupled architectures, or separate organizations.
+            </td>
+</tr>
+</tbody>
+</table>
+<!-- Dynamic Formula Callout -->
+<div class="mt-space-lg p-space-md rounded-DEFAULT bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">calculate</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">
+            Verification Score Formula:
+          </span>
+<code class="font-code-snippet text-code-snippet bg-surface-container-lowest px-2 py-1 rounded text-primary">
+            Score = Σ(AuthorWeight + CommitWeight + ManifestWeight + RecencyWeight + BreadthWeight)
+          </code>
+</div>
+<div class="text-secondary font-label-md text-label-md">
+          Cap: <span class="font-bold text-on-surface">1.00</span> | Threshold for Verified: <span class="font-bold text-primary">≥ 0.60</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: "What we ignore & down-weight" (Anti-Gaming Safeguards) -->
+<section class="w-full py-space-xl">
+<div class="bg-primary-container/20 rounded-lg p-space-lg md:p-space-xl">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">shield</span>
+</div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-primary-container font-extrabold">Anti-Gaming Safeguards</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-black mb-space-sm">
+        What we ignore &amp; down-weight
+      </h2>
+<p class="font-body-md text-body-md text-secondary max-w-3xl mb-space-lg">
+        To prevent vanity metric inflation and resume spoofing, FairFold enforces automated heuristics that neutralize common portfolio tricks.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card A -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-lg flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[20px]">fork_right</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Forks Without Original Commits</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+              Forked upstream repositories are completely ignored by the AST crawler unless the candidate authored distinct merged commits or distinct upstream pull requests.
+            </p>
+</div>
+<div class="mt-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-error">cancel</span> Ignored (0.00)
+            </span>
+</div>
+</div>
+<!-- Card B -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-lg flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Copied Tutorials &amp; Templates</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+              Standard scaffoldings (e.g., unmodified <code class="font-code-snippet text-code-snippet">create-react-app</code>, cookiecutters, or hello-world walkthroughs) are flagged by code fingerprinting and deducted.
+            </p>
+</div>
+<div class="mt-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-error">trending_down</span> Down-weighted
+            </span>
+</div>
+</div>
+<!-- Card C -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-lg flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[20px]">folder_delete</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">Trivial or Empty Repositories</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+              Projects containing zero unit tests, single markdown files, or trivial scripts failing minimum file counts and cyclomatic complexity gates are filtered out before evaluation.
+            </p>
+</div>
+<div class="mt-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-error">filter_alt_off</span> Heuristic Filter
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: The Three Verification Statuses Explained -->
+<section class="w-full py-space-xl">
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Credential Standards</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-black">The Three Verification Statuses</h2>
+<p class="font-body-md text-body-md text-secondary">Candidates and recruiters encounter three crystalline status states across FairFold scorecards.</p>
+</div>
+<!-- Status Tiers Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- 1. Verified -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Verified
+            </span>
+<span class="font-code-snippet text-code-snippet text-primary font-bold">Score ≥ 0.60</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-black mb-space-xs">Verified Competency</h3>
+<p class="font-body-md text-body-md text-secondary mb-space-md">
+            Full algorithmic confirmation. The candidate demonstrates original, syntactically substantial source code authored in public repos with recent commit frequency.
+          </p>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-secondary font-label-md text-label-md mb-1">
+<span>Recruiter Visibility</span>
+<span class="text-primary font-bold">Public / Searchable</span>
+</div>
+<div class="w-full bg-secondary-fixed h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Includes interactive code inspect links and commit hashes accessible to hiring teams with candidate consent.
+        </p>
+</div>
+<!-- 2. Partial -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFD11A] text-[#4A3B1C] font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Partial
+            </span>
+<span class="font-code-snippet text-code-snippet text-on-surface font-bold">Score 0.30 - 0.59</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-black mb-space-xs">Partial Evidence</h3>
+<p class="font-body-md text-body-md text-secondary mb-space-md">
+            Identified in dependency files or sparse commit logs, but lacks broad multi-file authorship or recent project activity.
+          </p>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-secondary font-label-md text-label-md mb-1">
+<span>Recruiter Visibility</span>
+<span class="text-secondary font-bold">Hidden by Default</span>
+</div>
+<div class="w-full bg-secondary-fixed h-2 rounded-full overflow-hidden">
+<div class="bg-[#FFD11A] h-full w-[45%] rounded-full"></div>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Candidates can toggle visibility manually if they wish to accompany the skill with private portfolio references.
+        </p>
+</div>
+<!-- 3. Not Verified -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">info</span> Not Verified
+            </span>
+<span class="font-code-snippet text-code-snippet text-secondary font-bold">Score &lt; 0.30</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-black mb-space-xs">Unproven Claim</h3>
+<p class="font-body-md text-body-md text-secondary mb-space-md">
+            Skill declared on resume or profile without discernible public repository code footprint or verifiable commit history.
+          </p>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low mb-space-md">
+<div class="flex items-center justify-between text-secondary font-label-md text-label-md mb-1">
+<span>Recruiter Visibility</span>
+<span class="text-error font-bold">Candidate Only</span>
+</div>
+<div class="w-full bg-secondary-fixed h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[15%] rounded-full"></div>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Provides private diagnostic tips indicating which repositories or commits could be shared to achieve verified status.
+        </p>
+</div>
+</div>
+</section>
+<!-- Section 5: Highlighted Limits & Honest Boundaries Box -->
+<section class="w-full py-space-xl">
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl relative overflow-hidden">
+<!-- Top banner color bar -->
+<div class="absolute top-0 left-0 right-0 h-2 bg-[#FFD11A]"></div>
+<div class="flex items-center gap-space-sm mb-space-md">
+<span class="material-symbols-outlined text-[#B28200] text-[28px]">warning</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-[#7A5B00] font-bold">Algorithmic Integrity</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-black mb-space-sm">
+        Our system limits: What FairFold does and doesn't measure
+      </h2>
+<p class="font-body-md text-body-md text-secondary max-w-3xl mb-space-lg">
+        We prioritize transparency over exaggerated promises. FairFold does not compute an all-knowing genius quotient—we verify physical code occurrences.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT">
+<div class="flex items-center gap-2 mb-space-xs text-on-surface font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-secondary text-[20px]">domain_verification</span>
+            Code Presence ≠ Seniority
+          </div>
+<p class="font-body-sm text-body-sm text-secondary">
+            FairFold proves that code exists and was authored by you. It does not evaluate subtle architectural trade-offs, managerial mentorship, or cultural alignment.
+          </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT">
+<div class="flex items-center gap-2 mb-space-xs text-on-surface font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-secondary text-[20px]">lock</span>
+            Proprietary IP Stays Secret
+          </div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Engineers working inside closed enterprises are never asked to expose private employer code. We only audit what is deliberately public.
+          </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT">
+<div class="flex items-center gap-2 mb-space-xs text-on-surface font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-secondary text-[20px]">psychology</span>
+            Non-GitHub Skills
+          </div>
+<p class="font-body-sm text-body-sm text-secondary">
+            System design, SQL database tuning, production incident debugging, and team leadership seldom leave GitHub traces. We advise assessing these in interviews.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Privacy & Algorithmic Fairness Guarantee -->
+<section class="w-full py-space-xl">
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Privacy By Architecture</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-black">Zero-Bias Verification Protocol</h2>
+<p class="font-body-md text-body-md text-secondary">Engineered to eliminate demographic prejudice and maintain complete candidate sovereignty.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Privacy Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-space-md text-on-primary-container">
+<span class="material-symbols-outlined text-[24px]">visibility_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-black mb-space-xs">Public Repos Only</h3>
+<p class="font-body-md text-body-md text-secondary">
+            Zero access to private repositories, organization secrets, or corporate forks. Our OAuth scope strictly asks for <code class="font-code-snippet text-code-snippet text-on-surface">read:user</code> and public tree access.
+          </p>
+</div>
+<div class="mt-space-lg flex items-center gap-2 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified_user</span> Minimal Scope Mandate
+        </div>
+</div>
+<!-- Privacy Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-space-md text-on-primary-container">
+<span class="material-symbols-outlined text-[24px]">key_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-black mb-space-xs">You Control Access</h3>
+<p class="font-body-md text-body-md text-secondary">
+            Revoke repository tokens at any moment with single-click zero-retention wiping. Your profile audit trail can be permanently erased anytime.
+          </p>
+</div>
+<div class="mt-space-lg flex items-center gap-2 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span> Full Right to Erasure
+        </div>
+</div>
+<!-- Privacy Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-space-md text-on-primary-container">
+<span class="material-symbols-outlined text-[24px]">fingerprint</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-black mb-space-xs">Blind Algorithmic Fairness</h3>
+<p class="font-body-md text-body-md text-secondary">
+            Name, headshot, inferred gender, collegiate pedigree, age, and geographical location are completely stripped from search rank algorithms.
+          </p>
+</div>
+<div class="mt-space-lg flex items-center gap-2 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">balance</span> Anti-Bias Guarantee
+        </div>
+</div>
+</div>
+</section>
+<!-- Interactive Sandbox Preview Widget -->
+<section class="w-full py-space-xl">
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Interactive Sandbox</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-extrabold">Simulate a Skill Verification</h3>
+<p class="font-body-sm text-body-sm text-secondary">Toggle sample code attributes to observe real-time algorithmic weighting adjustments.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-secondary">Demo Target:</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-code-snippet text-code-snippet text-on-surface font-bold">TypeScript / React</span>
+</div>
+</div>
+<!-- Interactive Calculator Controls -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="flex flex-col gap-space-md">
+<label class="flex items-center justify-between p-space-md rounded-DEFAULT bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="w-5 h-5 accent-primary cursor-pointer" id="sim-auth" onchange="window.recalculateSimulation()" type="checkbox"/>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Candidate-authored source files</div>
+<div class="font-body-sm text-body-sm text-secondary">Direct .tsx implementations (+0.50)</div>
+</div>
+</div>
+<span class="font-code-snippet text-code-snippet text-primary font-bold">+0.50</span>
+</label>
+<label class="flex items-center justify-between p-space-md rounded-DEFAULT bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="w-5 h-5 accent-primary cursor-pointer" id="sim-commits" onchange="window.recalculateSimulation()" type="checkbox"/>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Matching commit email hash</div>
+<div class="font-body-sm text-body-sm text-secondary">Signed Git history confirmation (+0.20)</div>
+</div>
+</div>
+<span class="font-code-snippet text-code-snippet text-on-surface font-bold">+0.20</span>
+</label>
+<label class="flex items-center justify-between p-space-md rounded-DEFAULT bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="w-5 h-5 accent-primary cursor-pointer" id="sim-manifest" onchange="window.recalculateSimulation()" type="checkbox"/>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">package.json dependency declaration</div>
+<div class="font-body-sm text-body-sm text-secondary">Manifest presence (+0.15)</div>
+</div>
+</div>
+<span class="font-code-snippet text-code-snippet text-on-surface font-bold">+0.15</span>
+</label>
+<label class="flex items-center justify-between p-space-md rounded-DEFAULT bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<input class="w-5 h-5 accent-primary cursor-pointer" id="sim-recency" onchange="window.recalculateSimulation()" type="checkbox"/>
+<div>
+<div class="font-body-md text-body-md text-on-surface font-semibold">Activity within past 6 months</div>
+<div class="font-body-sm text-body-sm text-secondary">Recent push cadence (+0.10)</div>
+</div>
+</div>
+<span class="font-code-snippet text-code-snippet text-primary font-bold">+0.10</span>
+</label>
+</div>
+<!-- Simulation Output Box -->
+<div class="bg-surface-container-low p-space-lg rounded-DEFAULT flex flex-col justify-between">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-bold">Calculated Score Result</span>
+<div class="flex items-baseline gap-space-sm mt-space-sm">
+<span class="font-display-hero text-display-hero text-on-surface font-black" id="sim-score-display">0.85</span>
+<span class="font-headline-sm text-headline-sm text-secondary">/ 1.00</span>
+</div>
+<!-- Visual Bar -->
+<div class="w-full bg-secondary-fixed h-3 rounded-full overflow-hidden mt-space-md">
+<div class="bg-primary h-full rounded-full transition-all duration-300" id="sim-score-bar" style="width: 85%;"></div>
+</div>
+<div class="mt-space-lg flex items-center justify-between">
+<span class="font-body-md text-body-md text-secondary">Emitted Status Badge:</span>
+<div id="sim-badge-container">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Verified
+                </span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-lowest p-space-md rounded-DEFAULT">
+<div class="flex items-start gap-space-xs text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span id="sim-summary-text">
+                Candidate provides original source files with matching email commits. This exceeds the 0.60 threshold and earns the Verified badge.
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Final CTA ink band -->
+<section class="w-full my-space-xl">
+<div class="bg-inverse-surface rounded-lg p-space-lg md:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-xl">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed font-bold">Ready to get verified?</span>
+<h2 class="font-headline-lg text-headline-lg text-primary-container font-black leading-tight">
+          Turn your public code into undeniable credibility
+        </h2>
+<p class="font-body-md text-body-md text-tertiary-fixed-dim">
+          Connect your GitHub account in 60 seconds. Our read-only AST parser creates your zero-bias scorecard for high-conviction recruiters.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md w-full md:w-auto">
+<a class="h-12 px-space-lg rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg flex items-center justify-center hover:opacity-95 transition-all w-full sm:w-auto font-bold shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="sign-up" href="#">
+          Create my verified profile
+        </a>
+<a class="h-12 px-space-lg rounded-full bg-surface-container-highest/20 text-inverse-on-surface font-label-lg text-label-lg flex items-center justify-center hover:bg-surface-container-highest/30 transition-all w-full sm:w-auto" data-path="for-recruiters" href="#">
+          Explore candidate search
+        </a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  window.recalculateSimulation = function() {
+    var auth = document.getElementById('sim-auth').checked ? 0.50 : 0.0;
+    var commits = document.getElementById('sim-commits').checked ? 0.20 : 0.0;
+    var manifest = document.getElementById('sim-manifest').checked ? 0.15 : 0.0;
+    var recency = document.getElementById('sim-recency').checked ? 0.10 : 0.0;
+
+    var total = Math.min(1.0, Math.round((auth + commits + manifest + recency) * 100) / 100);
+    
+    var scoreDisplay = document.getElementById('sim-score-display');
+    var scoreBar = document.getElementById('sim-score-bar');
+    var badgeContainer = document.getElementById('sim-badge-container');
+    var summaryText = document.getElementById('sim-summary-text');
+
+    scoreDisplay.innerText = total.toFixed(2);
+    scoreBar.style.width = (total * 100) + '%';
+
+    if (total >= 0.60) {
+      scoreBar.className = 'bg-primary h-full rounded-full transition-all duration-300';
+      badgeContainer.innerHTML = '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md font-semibold"><span class="material-symbols-outlined text-[16px]">check_circle</span> Verified</span>';
+      summaryText.innerText = 'Meets or exceeds 0.60 threshold with verified candidate-authored code. Appears in search results.';
+    } else if (total >= 0.30) {
+      scoreBar.className = 'bg-[#FFD11A] h-full rounded-full transition-all duration-300';
+      badgeContainer.innerHTML = '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFD11A] text-[#4A3B1C] font-label-md text-label-md font-semibold"><span class="material-symbols-outlined text-[16px]">schedule</span> Partial</span>';
+      summaryText.innerText = 'Falls in 0.30 - 0.59 zone. Needs additional source file proof to achieve verified status. Hidden by default.';
+    } else {
+      scoreBar.className = 'bg-secondary h-full rounded-full transition-all duration-300';
+      badgeContainer.innerHTML = '<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold"><span class="material-symbols-outlined text-[16px]">info</span> Not Verified</span>';
+      summaryText.innerText = 'Below 0.30 threshold. Insufficient repository authorship detected. Private to candidate only.';
+    }
+  };
+</script></main><footer class="w-full bg-inverse-surface text-inverse-on-surface mt-space-xl"><div class="max-w-[1360px] mx-auto px-margin py-margin"><div class="grid grid-cols-1 md:grid-cols-5 gap-space-xl pb-margin"><div class="md:col-span-1 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[20px]">data_object</span></div><span class="font-headline-sm text-headline-sm text-inverse-on-surface font-extrabold">FairFold</span></div><p class="font-body-sm text-body-sm text-tertiary-fixed-dim">Objective developer metric verification engine. Engineered for transparency, credibility, and absolute fairness.</p><div class="flex items-center gap-space-xs pt-space-xs"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest/10 text-primary-fixed font-label-md text-label-md"><span class="material-symbols-outlined text-[14px]">verified_user</span> ISO 27001</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest/10 text-primary-fixed font-label-md text-label-md"><span class="material-symbols-outlined text-[14px]">lock_open</span> SOC2 Type II</span></div></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-inverse-on-surface">Candidates</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-tertiary-fixed-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="github-scorecard" href="#">GitHub Scorecard</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="skill-verifications" href="#">Skill Verifications</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="candidate-privacy" href="#">Zero-Bias Profile</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="compensation-benchmarks" href="#">Compensation</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-inverse-on-surface">Recruiters</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-tertiary-fixed-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="pipeline-sourcing" href="#">Pipeline Sourcing</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="codebase-benchmarks" href="#">Repo Audit</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="recruiter-ats-integrations" href="#">ATS Integrations</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="enterprise-compliance" href="#">Enterprise SLA</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-inverse-on-surface">Transparency</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-tertiary-fixed-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="scoring-methodology" href="#">Scoring Logic</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="audit-reports" href="#">Audit Reports</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="anti-bias-declaration" href="#">Anti-Bias Protocol</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="trust-center" href="#">Trust Center</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-inverse-on-surface">Legal</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-tertiary-fixed-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="candidate-rights" href="#">GDPR &amp; CCPA</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="security-whitepaper" href="#">Security Standards</a></li></ul></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between text-tertiary-fixed-dim font-label-md text-label-md"><p>© 2025 FairFold Technologies, Inc. All rights reserved.</p><div class="flex items-center gap-space-lg mt-space-sm md:mt-0"><a class="hover:text-inverse-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy</a><a class="hover:text-inverse-on-surface transition-colors" data-path="terms-of-service" href="#">Terms</a><a class="hover:text-inverse-on-surface transition-colors" data-path="trust-center" href="#">Security</a></div></div></div></footer></body></html>

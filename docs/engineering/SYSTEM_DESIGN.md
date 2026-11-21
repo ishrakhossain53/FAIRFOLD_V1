@@ -1,6 +1,6 @@
 # System Design: GitHub-Verified Skills Recruitment Platform
 
-Nov 20, 2026 · derived from the [PRD](PRD%20GitHub-Verified%20Skills%20Recruitment%20Platform.md) and [TRD](TRD%20GitHub-Verified%20Skills%20Recruitment%20Platform.md)
+Nov 20, 2026 · derived from the [PRD](../product/PRD.md) and [TRD](TRD.md)
 
 This document describes how the MVP is put together: the components, how data moves between them, where state lives, and the trade-offs behind the main choices. The PRD says what to build; the TRD fixes the stack and contracts; this file explains the shape of the system and why it holds.
 
@@ -94,7 +94,7 @@ flowchart LR
 
 **Job granularity.** One job per candidate, not per repository. Per-skill progress is stored, so a rate-limit pause resumes at the next repository rather than restarting the profile. Rate-limit handling checks remaining quota before each batch, honours `X-RateLimit-Reset`, and uses conditional requests so repeated scans cost almost nothing.
 
-**Scoring.** The weights are additive and deliberately simple (authored files 0.50, authored commits 0.20, manifest entry 0.15, recency 0.10, multi-repo 0.05) so a reviewer can reconstruct any result by hand. Repos flagged as forks, clones or trivial contribute zero. A manifest entry alone tops out at 0.15 — weak by construction, as the PRD requires.
+**Scoring.** The weights are additive and deliberately simple, so a reviewer can reconstruct any result by hand; see [VERIFICATION_RULES.md](../engineering/VERIFICATION_RULES.md) for the numbers. Repos flagged as forks, clones or trivial contribute zero. A manifest entry alone tops out below `verified` — weak by construction, as the PRD requires.
 
 **Why the worker is Python.** CV layout handling and source-file/import parsing have mature Python libraries. The cost is two languages and two deployment units; the benefit is not reimplementing parsers in Node.
 

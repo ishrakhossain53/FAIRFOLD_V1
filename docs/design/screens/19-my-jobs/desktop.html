@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 20;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error":"#ffffff","tertiary-fixed":"#e4e2dd","tertiary-fixed-dim":"#c8c6c1","surface-container-low":"#f3f3f4","on-primary-container":"#2e6900","error-container":"#ffdad6","secondary-fixed":"#e0e3de","surface-container-highest":"#e2e2e2","on-secondary-container":"#5e625e","outline-variant":"#c1cab5","surface-container-high":"#e8e8e8","primary-fixed-dim":"#91d963","surface":"#f9f9f9","surface-dim":"#dadada","on-secondary-fixed-variant":"#444844","on-surface-variant":"#41493a","primary":"#2f6c00","on-tertiary-fixed":"#1b1c19","secondary-fixed-dim":"#c4c7c3","primary-fixed":"#acf67c","on-primary-fixed-variant":"#225100","outline":"#717a68","on-secondary":"#ffffff","on-tertiary-fixed-variant":"#474743","primary-container":"#9fe870","on-background":"#1a1c1c","inverse-on-surface":"#f0f1f1","surface-bright":"#f9f9f9","on-tertiary-container":"#5c5c58","on-tertiary":"#ffffff","inverse-primary":"#91d963","secondary":"#5b5f5c","inverse-surface":"#2f3131","error":"#ba1a1a","secondary-container":"#dbded9","tertiary-container":"#d6d5cf","on-primary":"#ffffff","surface-tint":"#2f6c00","tertiary":"#5e5f5a","on-error-container":"#93000a","on-secondary-fixed":"#191c1a","on-surface":"#1a1c1c","on-primary-fixed":"#092100","background":"#f9f9f9","surface-variant":"#e2e2e2","surface-container":"#eeeeee","surface-container-lowest":"#ffffff"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-mobile":"1.25rem","space-md":"1rem","gutter":"1.5rem","gutter-mobile":"1rem","space-sm":"0.5rem","margin":"3rem","space-xl":"2.5rem","space-lg":"1.5rem"},"fontFamily":{"display-hero-mobile":["Manrope"],"headline-lg-mobile":["Manrope"],"headline-lg":["Manrope"],"display-hero":["Manrope"],"body-sm":["Inter"],"label-lg":["Inter"],"body-lg":["Inter"],"code-snippet":["JetBrains Mono"],"body-md":["Inter"],"label-md":["Inter"],"headline-md":["Manrope"],"headline-sm":["Manrope"]},"fontSize":{"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"900"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"900"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"code-snippet":["13px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"800"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"800"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-8 flex items-center justify-between gap-6"><div class="flex items-center gap-6"><div class="flex items-center gap-2.5"><div class="flex items-center justify-center w-9 h-9 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-bold">F</div><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">FairFold</span><span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold tracking-wide">Recruiter Suite</span></div></div><div class="hidden xl:flex items-center relative w-80 2xl:w-96"><span class="material-symbols-outlined absolute left-3.5 text-secondary pointer-events-none text-[20px]">search</span><input class="w-full h-11 pl-10 pr-4 rounded-full bg-surface-container-low text-on-surface placeholder:text-secondary font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-on-surface transition-all" placeholder="Search candidates, jobs, requisitions, or skills..." type="text"/></div></div><nav class="hidden lg:flex items-center gap-1 bg-surface-container-low p-1.5 rounded-full" data-active-classes="bg-surface-container text-on-surface font-semibold"><a class="px-4 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="executive-dashboard" href="#">Dashboard</a><a class="px-4 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="talent-search" href="#">Talent Search</a><a class="px-4 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="my-jobs" href="#">My Jobs</a><a class="px-4 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="integrations-ats" href="#">Integrations &amp; ATS</a><a class="px-4 py-2 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="portal-settings" href="#">Settings</a></nav><div class="flex items-center gap-3.5"><button class="hidden sm:flex items-center gap-2 h-11 px-5 rounded-full bg-primary-container text-on-primary-fixed hover:bg-primary-fixed hover:text-on-primary-fixed transition-all active:scale-[0.99]"><span class="material-symbols-outlined text-[20px]">add</span><span class="font-label-lg text-label-lg font-bold">Post New Job</span></button><button aria-label="Notifications" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute -top-0.5 -right-0.5 flex items-center justify-center min-w-5 h-5 px-1 rounded-full bg-primary text-on-primary font-label-md text-[10px] font-bold">3</span></button><div class="hidden md:flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">domain</span><div class="flex flex-col text-left"><span class="font-label-md text-label-md leading-tight font-semibold">BrightByte Ltd</span><span class="font-label-md text-[11px] text-secondary leading-tight">Series A</span></div><span class="material-symbols-outlined text-secondary text-[16px]">unfold_more</span></div><div class="flex items-center gap-3 pl-1"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden 2xl:flex flex-col"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Tanvir Ahmed</span><span class="font-label-md text-[11px] text-secondary leading-tight">Lead Tech Recruiter</span></div></div></div></div></header><aside class="fixed left-0 top-20 bottom-0 w-64 bg-surface-container-low z-40 flex flex-col justify-between py-6 px-4 shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex flex-col gap-6"><div class="px-3"><span class="font-label-md text-label-md text-secondary tracking-wider uppercase font-semibold">Requisition Hub</span></div><nav class="flex flex-col gap-1.5" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="executive-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Overview</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="talent-search" href="#"><span class="material-symbols-outlined text-[20px]">travel_explore</span><span>Talent Pool</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="my-jobs" href="#"><span class="material-symbols-outlined text-[20px]">work_outline</span><span>Open Roles</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="interview-pipeline" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span>Blind Assessments</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="integrations-ats" href="#"><span class="material-symbols-outlined text-[20px]">sync_alt</span><span>ATS Sync</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-full font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="portal-settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Preferences</span></a></nav></div><div class="flex flex-col gap-3 px-3"><div class="p-3.5 rounded-2xl bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-2 mb-1.5"><span class="material-symbols-outlined text-primary text-[18px]">verified_user</span><span class="font-label-md text-label-md font-bold text-on-surface">AST Verification</span></div><p class="font-body-sm text-[12px] leading-relaxed text-secondary">Deterministic repo benchmarking active across all pipelines.</p></div><div class="flex items-center justify-between text-secondary pt-2"><span class="font-label-md text-[11px]">v3.4.1 Engine</span><span class="inline-flex items-center gap-1 font-label-md text-[11px] text-primary font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Operational</span></div></div></aside><div class="pl-64"><div class="pt-20"><div class="w-full px-8 py-3.5 bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_1px_4px_rgba(0,0,0,0.02)] flex flex-wrap items-center justify-between gap-4"><div class="flex items-center gap-2 font-label-md text-label-md text-secondary"><a class="hover:text-on-surface transition-colors" data-path="executive-dashboard" href="#">Recruiter Portal</a><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface font-semibold">Executive Dashboard</span></div><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low font-label-md text-[12px] text-on-surface"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-semibold text-primary">FairFold Protocol:</span><span>Real-Time AST Matching Active</span><span class="text-secondary">•</span><span>48h SLA Health: <strong class="font-semibold text-on-surface">98.4%</strong></span></div></div></div><main class="w-full max-w-[1440px] mx-auto px-8 py-8 min-h-[calc(100vh-280px)]"><div class="flex flex-col w-full gap-8">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-2">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Requisition Control Hub
+        </span>
+<span class="font-label-md text-label-md text-secondary">Org: <strong class="text-on-surface font-semibold">BrightByte Ltd</strong> (Series A)</span>
+</div>
+<div class="flex flex-wrap items-baseline gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Active Requisitions</h1>
+<span class="font-code-snippet text-code-snippet px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-medium">5 Active Reqs Live</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+        Supervised by <strong class="text-on-surface font-medium">Tanvir Ahmed</strong> (Lead Tech Recruiter). All pipelines guarded by cryptographic AST verifiable screening.
+      </p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<button class="flex items-center gap-2 h-12 px-6 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-lg text-label-lg font-semibold transition-all shadow-sm active:scale-[0.99]">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Report (CSV/JSON)</span>
+</button>
+<a class="flex items-center gap-2 h-12 px-6 rounded-full bg-primary-container text-on-primary-fixed hover:bg-primary-fixed font-headline-sm text-label-lg font-bold transition-all shadow-sm active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Create New Requisition</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-semibold uppercase tracking-wider">Active Openings</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">5</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">Live Roles</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">3 Sourcing • 2 Final Interviews • 1 Draft</p>
+</div>
+<div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 60%"></div>
+<div class="bg-primary-fixed-dim h-full" style="width: 25%"></div>
+<div class="bg-surface-variant h-full" style="width: 15%"></div>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-semibold uppercase tracking-wider">Pipeline Flow</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">42</span>
+<span class="font-label-lg text-label-lg text-secondary font-semibold">Total Pool</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">26 Cleared Gates • 11 Interviewing • 3 Offers</p>
+</div>
+<div class="flex items-center justify-between font-label-md text-label-md pt-1">
+<span class="text-secondary font-medium">Conversion Rate</span>
+<span class="font-bold text-on-surface">61.9% Gate Clearance</span>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-semibold uppercase tracking-wider">Avg AST Gate Score</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">neurology</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">78.2<span class="font-headline-sm text-headline-sm">nd</span></span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-[11px] font-bold">+14% vs Market</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">0 pedigree flags • Deterministic codebase scan</p>
+</div>
+<div class="flex items-center gap-1.5 text-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Zero False-Demographic Drops</span>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-semibold uppercase tracking-wider">48h SLA Status</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">98.8%</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">On-Time</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Avg Recruiter First Touch: <strong class="text-on-surface font-semibold">14.6h</strong></p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low font-label-md text-label-md text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>1 candidate SLA warning (&lt; 12h left)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-6 rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-2" id="filter-tabs">
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold transition-all">
+          All Jobs (8)
+        </button>
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-bold shadow-sm transition-all flex items-center gap-2">
+<span>Active Openings (5)</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-secondary hover:text-on-surface hover:bg-surface-container font-label-lg text-label-lg font-medium transition-all">
+          Interviewing / Cleared (3)
+        </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-secondary hover:text-on-surface hover:bg-surface-container font-label-lg text-label-lg font-medium transition-all">
+          Drafts (1)
+        </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-secondary hover:text-on-surface hover:bg-surface-container font-label-lg text-label-lg font-medium transition-all">
+          Closed / Archived (2)
+        </button>
+</div>
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Synced with ATS 14m ago</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3 pt-2">
+<div class="md:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-12 pr-4 rounded-full bg-surface-container-low text-on-surface placeholder:text-secondary font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" placeholder="Filter by job title, req ID, primary skill requirement, or team..." type="text"/>
+</div>
+<div class="md:col-span-2">
+<div class="relative w-full">
+<select class="w-full h-12 pl-4 pr-10 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md outline-none appearance-none cursor-pointer focus:bg-surface-container-lowest transition-all">
+<option>All Teams (Eng, Platform, DS)</option>
+<option>Core Product Squad</option>
+<option>Design Systems &amp; Web</option>
+<option>Cloud Infrastructure</option>
+<option>Distributed Services</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="md:col-span-2">
+<div class="relative w-full">
+<select class="w-full h-12 pl-4 pr-10 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md outline-none appearance-none cursor-pointer focus:bg-surface-container-lowest transition-all">
+<option>All Locations (Remote, Dhaka)</option>
+<option>Hybrid (Dhaka UTC+6)</option>
+<option>Global Remote</option>
+<option>Europe Remote (UTC+1/2)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="md:col-span-3">
+<div class="relative w-full">
+<select class="w-full h-12 pl-4 pr-10 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md outline-none appearance-none cursor-pointer focus:bg-surface-container-lowest transition-all">
+<option>Sort: Most Urgent / High Volume</option>
+<option>Sort: Highest Applicant Volume</option>
+<option>Sort: Newest Requisition</option>
+<option>Sort: Lowest Candidate Pass-Rate</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[18px]">sort</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-6 transition-all hover:shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="font-code-snippet text-code-snippet px-3 py-1 rounded-full bg-surface-container text-on-surface font-bold tracking-tight">REQ #BB-4029</span>
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md font-bold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              Active — High Volume
+            </span>
+<span class="px-3 py-1 rounded-full bg-error-container text-error font-label-md text-label-md font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+              SLA Alert (&lt; 12h remaining)
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Junior Full-Stack Developer</h2>
+<div class="flex flex-wrap items-center gap-4 text-secondary font-label-md text-label-md">
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">domain</span>Core Product Squad</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span>Hybrid (Dhaka, UTC+6)</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span>$18,000 – $24,000 / yr USD</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">pie_chart</span>Equity: 0.1% – 0.25%</span>
+</div>
+</div>
+<div class="flex items-center gap-3 self-start lg:self-center">
+<button class="w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors" title="Quick Options">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+<button class="h-11 px-5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold transition-all">
+            Review Gates &amp; Thresholds
+          </button>
+<a class="h-11 px-6 rounded-full bg-primary-container hover:bg-primary-fixed text-on-primary-fixed font-headline-sm text-label-lg font-bold flex items-center gap-2 transition-all" href="#">
+<span>View 8 Applicants</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-error-container/30 flex items-center justify-between flex-wrap gap-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center font-bold text-label-md">!</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Candidate <strong class="font-semibold text-on-surface font-code-snippet">#FF-8829-NJ</strong> is nearing the 48-hour hiring manager response threshold. 
+            AST score is <strong class="text-primary font-bold">89.4th percentile</strong>.
+          </p>
+</div>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest font-label-md text-label-md font-bold text-on-surface hover:bg-surface transition-colors shadow-sm">
+          Resolve Review (11h 20m Left)
+        </button>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 pt-2">
+<div class="xl:col-span-5 flex flex-col gap-3">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Configured Cryptographic AST Screening Gates</span>
+<div class="flex flex-col gap-2.5">
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">terminal</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">React Architecture</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.65 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">74% Pass Rate</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">code_blocks</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">TypeScript Strict Mode</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.60 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">68% Pass Rate</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">dns</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Node.js Concurrency</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.60 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">81% Pass Rate</span>
+</div>
+</div>
+</div>
+<div class="xl:col-span-7 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Candidate Pipeline Mini-Funnel</span>
+<span class="font-label-md text-label-md text-secondary">37.5% Qualified Yield</span>
+</div>
+<div class="grid grid-cols-4 gap-2 h-full">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Inbound</span>
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">8</span>
+<p class="font-label-md text-[11px] text-secondary">Total Applied</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">AST Cleared</span>
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold">3</span>
+<p class="font-label-md text-[11px] text-secondary">100% Verified Match</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[38%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Interview</span>
+<span class="material-symbols-outlined text-[16px]">forum</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">1</span>
+<p class="font-label-md text-[11px] text-secondary">Tech Panel Sched</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-surface h-full w-[15%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-primary-container/20 flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Hired</span>
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold">1</span>
+<p class="font-label-md text-[11px] text-on-primary-container font-semibold">Offer Accepted</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-6 transition-all hover:shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="font-code-snippet text-code-snippet px-3 py-1 rounded-full bg-surface-container text-on-surface font-bold tracking-tight">REQ #BB-4031</span>
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md font-bold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              Active — Screening
+            </span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">event</span>
+              Next Interview: Friday 3:30 PM BST
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Frontend Engineer (Design Systems)</h2>
+<div class="flex flex-wrap items-center gap-4 text-secondary font-label-md text-label-md">
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">palette</span>Design Systems &amp; Web Experience</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">public</span>Global Remote</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span>$22,000 – $30,000 / yr USD</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">pie_chart</span>Equity: 0.15%</span>
+</div>
+</div>
+<div class="flex items-center gap-3 self-start lg:self-center">
+<button class="w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+<button class="h-11 px-5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold transition-all">
+            Review Gates
+          </button>
+<a class="h-11 px-6 rounded-full bg-primary-container hover:bg-primary-fixed text-on-primary-fixed font-headline-sm text-label-lg font-bold flex items-center gap-2 transition-all" href="#">
+<span>View 11 Applicants</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 pt-2">
+<div class="xl:col-span-5 flex flex-col gap-3">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">AST Screening Parameters</span>
+<div class="flex flex-col gap-2.5">
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">brush</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Tailwind CSS Modularization</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.80 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Verified</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">account_tree</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">React Component Architecture</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.75 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Verified</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">code</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">TypeScript Strict Type Safety</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.70 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Verified</span>
+</div>
+</div>
+</div>
+<div class="xl:col-span-7 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Candidate Pipeline Mini-Funnel</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Candidate #FS-9912 (Nusrat Jahan) Up Next</span>
+</div>
+<div class="grid grid-cols-4 gap-2 h-full">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Inbound</span>
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">11</span>
+<p class="font-label-md text-[11px] text-secondary">Total Candidates</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">AST Cleared</span>
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold">4</span>
+<p class="font-label-md text-[11px] text-secondary">Pass Criteria</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[36%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Tech Review</span>
+<span class="material-symbols-outlined text-[16px]">sync_saved_locally</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">2</span>
+<p class="font-label-md text-[11px] text-secondary">Under Evaluation</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-surface h-full w-[20%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Hired</span>
+<span class="material-symbols-outlined text-[16px]">pending</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-secondary font-extrabold">0</span>
+<p class="font-label-md text-[11px] text-secondary">Target: 1 Engineer</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-surface-variant h-full w-0"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-6 transition-all hover:shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="font-code-snippet text-code-snippet px-3 py-1 rounded-full bg-surface-container text-on-surface font-bold tracking-tight">REQ #BB-4022</span>
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md font-bold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              Active — Final Stage
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Senior DevOps &amp; Platform Engineer</h2>
+<div class="flex flex-wrap items-center gap-4 text-secondary font-label-md text-label-md">
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">cloud</span>Cloud Infrastructure</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">public</span>Remote (Europe / UTC+1 or UTC+2)</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span>$55,000 – $75,000 / yr USD</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">pie_chart</span>Equity: 0.35%</span>
+</div>
+</div>
+<div class="flex items-center gap-3 self-start lg:self-center">
+<button class="w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+<button class="h-11 px-5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold transition-all">
+            Review Gates
+          </button>
+<a class="h-11 px-6 rounded-full bg-primary-container hover:bg-primary-fixed text-on-primary-fixed font-headline-sm text-label-lg font-bold flex items-center gap-2 transition-all" href="#">
+<span>View 14 Applicants</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 pt-2">
+<div class="xl:col-span-5 flex flex-col gap-3">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">AST Screening Parameters</span>
+<div class="flex flex-col gap-2.5">
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">deployed_code</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Docker &amp; Kubernetes Topology</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.75 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Enforced</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">schema</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Terraform / IaC Reproducibility</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.70 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Enforced</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">security</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">AWS IAM Least Privilege Engine</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.80 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Enforced</span>
+</div>
+</div>
+</div>
+<div class="xl:col-span-7 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Candidate Pipeline Mini-Funnel</span>
+<span class="font-label-md text-label-md text-secondary">High Seniority Precision Bar</span>
+</div>
+<div class="grid grid-cols-4 gap-2 h-full">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Inbound</span>
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">14</span>
+<p class="font-label-md text-[11px] text-secondary">Total Submissions</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">AST Cleared</span>
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold">5</span>
+<p class="font-label-md text-[11px] text-secondary">Deep AST Passed</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[35%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Architecture</span>
+<span class="material-symbols-outlined text-[16px]">architecture</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">2</span>
+<p class="font-label-md text-[11px] text-secondary">Final Stage</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-surface h-full w-[25%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Hired</span>
+<span class="material-symbols-outlined text-[16px]">flag</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-secondary font-extrabold">0</span>
+<p class="font-label-md text-[11px] text-secondary">Debrief Tomorrow</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-surface-variant h-full w-0"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-6 transition-all hover:shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="font-code-snippet text-code-snippet px-3 py-1 rounded-full bg-surface-container text-on-surface font-bold tracking-tight">REQ #BB-4025</span>
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-label-md font-bold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              Active — Sourcing
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Backend Systems Associate (Go / Distributed)</h2>
+<div class="flex flex-wrap items-center gap-4 text-secondary font-label-md text-label-md">
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">database</span>Data Pipeline &amp; Distributed Services</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">public</span>Remote (Asia-Pacific / UTC+7)</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span>$28,000 – $36,000 / yr USD</span>
+</div>
+</div>
+<div class="flex items-center gap-3 self-start lg:self-center">
+<button class="w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+<button class="h-11 px-5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold transition-all">
+            Review Gates
+          </button>
+<a class="h-11 px-6 rounded-full bg-primary-container hover:bg-primary-fixed text-on-primary-fixed font-headline-sm text-label-lg font-bold flex items-center gap-2 transition-all" href="#">
+<span>View 9 Applicants</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 pt-2">
+<div class="xl:col-span-5 flex flex-col gap-3">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">AST Screening Parameters</span>
+<div class="flex flex-col gap-2.5">
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">developer_mode_tv</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Node.js / Express Resilience</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.70 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Active</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">storage</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">PostgreSQL Indexing &amp; Query Plans</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.65 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Active</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px]">memory</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Go (Golang) Concurrency Primitives</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-snippet text-[11px]">≥ 0.60 pctl</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Active</span>
+</div>
+</div>
+</div>
+<div class="xl:col-span-7 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Candidate Pipeline Mini-Funnel</span>
+<span class="font-label-md text-label-md text-secondary">33% Gate Cleared</span>
+</div>
+<div class="grid grid-cols-4 gap-2 h-full">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Inbound</span>
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">9</span>
+<p class="font-label-md text-[11px] text-secondary">Total Candidates</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">AST Cleared</span>
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-primary font-extrabold">3</span>
+<p class="font-label-md text-[11px] text-secondary">Deterministic Pass</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[33%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Walkthrough</span>
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold">1</span>
+<p class="font-label-md text-[11px] text-secondary">Code Audit Sched</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-surface h-full w-[15%]"></div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-md text-[11px] uppercase font-bold tracking-wider">Hired</span>
+<span class="material-symbols-outlined text-[16px]">hourglass_empty</span>
+</div>
+<div>
+<span class="font-headline-md text-headline-md text-secondary font-extrabold">0</span>
+<p class="font-label-md text-[11px] text-secondary">Open Role</p>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-surface-variant h-full w-0"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-low shadow-sm flex flex-col gap-6">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="font-code-snippet text-code-snippet px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-bold tracking-tight">REQ #BB-DRAFT-04</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Draft — Pending Gate Formulation
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Staff Security Engineer (Zero-Knowledge &amp; TEE)</h2>
+<div class="flex flex-wrap items-center gap-4 text-secondary font-label-md text-label-md">
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">lock</span>Core Cryptography</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">public</span>Global Remote</span>
+<span>•</span>
+<span class="inline-flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span>$90,000 – $120,000 / yr USD</span>
+</div>
+</div>
+<div class="flex items-center gap-3 self-start lg:self-center">
+<button class="h-11 px-5 rounded-full bg-surface-container-lowest hover:bg-surface text-error font-label-lg text-label-lg font-semibold transition-all">
+            Discard Draft
+          </button>
+<a class="h-11 px-6 rounded-full bg-on-surface hover:bg-inverse-surface text-surface font-headline-sm text-label-lg font-bold flex items-center gap-2 transition-all" href="#">
+<span>Continue Editing Draft</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">tune</span>
+<span class="font-body-sm text-body-sm text-secondary">
+            Draft AST Targets: <code class="font-code-snippet text-on-surface px-2 py-0.5 rounded bg-surface-container">Rust AST ≥ 0.85 pctl</code>, <code class="font-code-snippet text-on-surface px-2 py-0.5 rounded bg-surface-container">SGX/Nitro Attestation ≥ 0.80 pctl</code>
+</span>
+</div>
+<span class="font-label-md text-label-md text-secondary">Last updated 2 days ago by Tanvir Ahmed</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">ATS Synchronization</h4>
+<span class="font-label-md text-label-md text-secondary">Greenhouse &amp; Lever Webhooks</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+        External job slots are auto-synced across boards. Inbound applicants instantly enter the AST parser without manual export.
+      </p>
+<div class="flex items-center justify-between pt-2">
+<span class="font-code-snippet text-code-snippet text-primary font-bold">5 Reqs Live in Greenhouse</span>
+<button class="font-label-md text-label-md font-bold text-on-surface hover:underline">Manage Sync</button>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">balance</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Blind Screening Impact</h4>
+<span class="font-label-md text-label-md text-secondary">Zero-Bias Verification</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+        FairFold AST validation saved <strong class="text-on-surface font-semibold">32.5 hours</strong> of resume review this month with zero demographic drop-offs detected.
+      </p>
+<div class="flex items-center justify-between pt-2">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary-fixed font-label-md text-[11px] font-bold">100% Bias Audited</span>
+<button class="font-label-md text-label-md font-bold text-on-surface hover:underline">Audit Log</button>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface leading-tight">SLA Governance</h4>
+<span class="font-label-md text-label-md text-secondary">Institutional Hiring Speed</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+        Candidates who pass the gate receive engineering lead feedback within 48 hours. Current team compliance score is 98.8%.
+      </p>
+<div class="flex items-center justify-between pt-2">
+<span class="font-code-snippet text-code-snippet text-on-surface font-semibold">Avg Touch: 14.6 hrs</span>
+<button class="font-label-md text-label-md font-bold text-on-surface hover:underline">SLA Metrics</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.querySelectorAll('#filter-tabs button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('#filter-tabs button').forEach(b => {
+        b.className = 'px-4 py-2 rounded-full bg-surface-container-low text-secondary hover:text-on-surface hover:bg-surface-container font-label-lg text-label-lg font-medium transition-all';
+      });
+      button.className = 'px-4 py-2 rounded-full bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-bold shadow-sm transition-all flex items-center gap-2';
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-low py-8 shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="w-full max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex flex-col gap-1"><div class="flex items-center gap-2"><span class="font-headline-sm text-[16px] font-bold text-on-surface">FairFold Institutional Recruitment</span><span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-[10px] font-semibold">Enterprise Core</span></div><p class="font-body-sm text-[13px] text-secondary">Objective developer assessment backed by verifiable AST telemetry &amp; zero-bias evaluation guarantees.</p></div><div class="flex flex-wrap items-center gap-6 font-label-md text-label-md text-secondary"><div class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[16px]">shield</span><span>SOC-2 Type II</span></div><div class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[16px]">lock</span><span>ISO 27001 Certified</span></div><div class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[16px]">balance</span><span>Anti-Bias Guarantee</span></div><div class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>99.98% System Uptime</span></div></div></div></footer></div></body></html>

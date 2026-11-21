@@ -1,6 +1,6 @@
 # UI/UX Designer Brief: GitHub-Verified Skills Recruitment Platform
 
-**Sources:** PRD (Nov 16), TRD (Nov 18), SYSTEM_DESIGN (Nov 20), DESIGN.md (visual style guide)
+**Sources:** [PRD](../product/PRD.md) (Nov 16), [TRD](../engineering/TRD.md) (Nov 18), [SYSTEM_DESIGN](../engineering/SYSTEM_DESIGN.md) (Nov 20), [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) (delivered visual system), [screens/](screens/README.md) (the 37 delivered screens)
 **Purpose:** Tells the designer how many pages to design, what each page contains, and gives a ready-to-paste Google Stitch prompt for every page.
 
 ---
@@ -92,38 +92,42 @@ Priority key: **P0** = MVP, **P1** = shortly after launch (design now, build lat
 
 ---
 
-## 5. Design system (from DESIGN.md)
+## 5. Design system (delivered, in DESIGN_SYSTEM.md)
 
-The visual language is a calm, friendly fintech look: sage canvas, white 24 px cards, one lime-green action color, very heavy display headlines.
+The visual language of the delivered screens: near-white canvas, white 32 px cards, one lime action color, very heavy Manrope headlines. Values below are the token block of [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md), which is authoritative — code follows it, not the PNG thumbnails.
 
 ### 5.1 Tokens
 
 | Token | Value | Use |
 | --- | --- | --- |
-| Primary (lime) | `#9FE870` | Every primary button. Only brand accent. |
-| Primary hover / pale | `#CDFFAD` / `#E2F6D5` | Active state, soft green card, Verified badge background |
-| Canvas soft (sage) | `#E8EBE6` | Page background, secondary buttons |
-| Canvas | `#FFFFFF` | Cards, nav bar, inputs |
-| Ink | `#0E0F0C` | Text, headings, outline borders, dark footer and dark cards |
-| Body / Mute | `#454745` / `#868685` | Secondary text / captions, placeholders |
-| Positive | `#2EAD4B`, deep `#054D28` | Success text (never reuse the lime for success) |
-| Warning | `#FFD11A`, content `#4A3B1C` | Partial status |
-| Negative | `#D03238`, deep `#A72027` | Errors, destructive actions |
-| Accent orange / cyan | `#FFC091` / `#38C8FF` | Illustrations only |
+| `primary-container` (lime) | `#9FE870` | Primary button fill only, with `#2E6900` text |
+| `primary` | `#2F6C00` | Icons, links, active accents — not a button fill |
+| `surface` (canvas) | `#F9F9F9` | Page background |
+| `surface-container-lowest` | `#FFFFFF` | Cards, nav bar, inputs |
+| `surface-container-high` | `#E8E8E8` | Nested wells, avatars, neutral badges |
+| `on-surface` (ink) | `#1A1C1C` | Text, headings, outlines |
+| `on-surface-variant` / `outline` | `#41493A` / `#717A68` | Secondary text / borders |
+| `error` | `#BA1A1A` | Errors, destructive actions |
+| Verified badge | `#E2F6D5` background, `#054D28` text | Confirmed by authored code |
+| Partial badge | `#FFD11A` background, `#4A3B1C` text | Weak or partial evidence |
+| Not verified badge | `#E8E8E8` background, `#1A1C1C` text | Neutral, never alarming |
+
+No second accent. Illustrations use lime and the neutral ramp only.
 
 ### 5.2 Typography
 
-- **Headlines:** Wise Sans is proprietary, so use **Manrope 800/900** (or Inter 900). Hero 64 to 126 px, section 40 px, weight 900.
-- **Everything else:** **Inter**. Sub-headings 24 to 32 px at 600, body 16 px, small 14 px, caption 12 px, buttons 16 px at 600.
-- Rule: weight 900 for hero only, 600 for the rest.
+- **Display and headings:** **Manrope** 800/900 — `display-hero` 56/64, `headline-lg` 40/48, `headline-md` 28/36, `headline-sm` 20/28, tracking −0.01 to −0.03 em.
+- **Body and UI:** **Inter** 400/500/600 — 18/28, 16/24, 14/20; labels 14/20 and 12/16 at 600.
+- **Data:** **JetBrains Mono** 500 at 13/20, only for repo names, commits, rule versions.
+- Rule: 900 for the hero headline, 800 for section headings, 600 for anything interactive.
 
 ### 5.3 Shape, spacing, components
 
-- Radius: buttons and cards **24 px**, inputs 12 px, small badges 8 px, status pills fully round.
-- Spacing base 4 px; card padding 24 px; section padding 48 px; container about 1200 px.
-- Elevation by surface contrast (white card on sage page), no heavy shadows.
-- Buttons: primary = lime pill, secondary = sage, tertiary = white with 1 px ink outline. About 48 px tall.
-- Breakpoints: mobile under 768, tablet 768 to 1023, desktop 1024+.
+- Radius: cards **32 px** (`rounded-lg` in the delivered HTML), nested panels 16 px, inputs 12 px, buttons and status pills fully round. The design system's prose says 24 px cards; the HTML and the token block say 32 px — HTML wins.
+- Spacing base 4 px; gutters 24 px; canvas margins 48 px; content container 1360 px.
+- Elevation by surface contrast (white card on `#F9F9F9`), one shadow token `0 12px 32px -4px rgba(14,15,12,.06)` for floating menus only.
+- Buttons 48 px tall: primary = lime pill, secondary = white card, tertiary = white with a 1 px ink outline.
+- Breakpoints: mobile under 768, tablet 768 to 1199, desktop 1200+, 12-column grid.
 - Dark band (ink background, lime text) only for promotional moments and the footer.
 
 ### 5.4 Product-specific component rules (added for this product)
@@ -132,7 +136,7 @@ The visual language is a calm, friendly fintech look: sage canvas, white 24 px c
 | --- | --- |
 | Verified badge | Pill, pale green `#E2F6D5` background, deep green `#054D28` text, check icon |
 | Partial badge | Pill, yellow `#FFD11A` background, `#4A3B1C` text |
-| Not verified badge | Pill, sage background, ink text, info icon (neutral, not alarming) |
+| Not verified badge | Pill, `#E8E8E8` background, `#1A1C1C` text, info icon (neutral, not alarming) |
 | Confidence meter | Thin rounded bar with 0.30 and 0.60 threshold ticks and the numeric score |
 | Skill chip | Pill with skill name; matched (green tint) / missing (outlined with a minus icon) on job pages |
 | Evidence row | Repo name, language chips, authored files and lines, last commit date, flag chips (Fork excluded, Tutorial clone down-weighted), "Open on GitHub" link |
@@ -150,7 +154,7 @@ The visual language is a calm, friendly fintech look: sage canvas, white 24 px c
 
 ### 5.6 Branding note
 
-DESIGN.md is derived from the Wise brand. Reuse the **style tokens and component shapes**, but do not copy Wise's logo, name, proprietary font or the currency-converter widget. This product replaces the converter hero card with a "verified skill profile preview" card.
+[DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) was generated for FairFold itself in Google Stitch, so there is no external brand to avoid copying. If a future export drifts (second accent, sharp corners, light headings), fix the export against the token block — not this document.
 
 ---
 
@@ -162,10 +166,12 @@ DESIGN.md is derived from the Wise brand. Reuse the **style tokens and component
 4. If Stitch drifts from the style (extra accent colors, sharp corners, light headline weight), add one follow-up message: "Keep exactly one accent color (lime #9FE870), 24px rounded cards, sage background, very heavy headlines."
 5. Generate in this order so later screens inherit the look: 1, 3, 10, 11, 13, 17, 18, 20, 21, then the rest.
 
+**The screens are already delivered** — see [screens/](screens/README.md) — so treat these prompts as historical. They still say "sage background", which the delivered system replaced with `#F9F9F9`; when a page changes, follow [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md), not the prompt text.
+
 ### 6.1 Global Style Block (paste before every page prompt)
 
 ```
-Design style: friendly, modern fintech-inspired web app. Page background is soft sage #E8EBE6; content sits on white cards with 24px rounded corners and no drop shadows (contrast between sage and white creates depth). Text is near-black #0E0F0C, secondary text #454745, muted text #868685. Use ONE accent color only: lime green #9FE870 for primary buttons, which are pill-shaped (24px radius), dark text, semibold 16px, 48px tall. Secondary buttons are sage-filled; tertiary buttons are white with a 1px black outline. Headlines use a very heavy geometric sans (Manrope ExtraBold 800-900); all other text uses Inter. Inputs are white with a 1px black border and 12px radius. Status badges are pill-shaped: Verified = pale green #E2F6D5 background with deep green #054D28 text and a check icon; Partial = yellow #FFD11A background with #4A3B1C text; Not verified = sage background with dark text and an info icon; errors use red #D03238. Generous whitespace, 4px spacing grid, WCAG AA contrast, always pair status color with an icon and label. Desktop frame 1440px wide unless stated.
+Design style: friendly, modern fintech-inspired web app. Page background is #F9F9F9; content sits on white cards with 32px rounded corners and no drop shadows. Text is #1A1C1C, secondary text #41493A, borders #717A68. Use ONE accent color only: lime green #9FE870 for primary buttons, which are pill-shaped (24px radius), dark text, semibold 16px, 48px tall. Secondary buttons are white; tertiary buttons are white with a 1px #1A1C1C outline. Headlines use a very heavy geometric sans (Manrope ExtraBold 800-900); all other text uses Inter. Inputs are white with a 1px #717A68 border and 12px radius. Status badges are pill-shaped: Verified = pale green #E2F6D5 background with deep green #054D28 text and a check icon; Partial = yellow #FFD11A background with #4A3B1C text; Not verified = #E8E8E8 background with #1A1C1C text and an info icon; errors use #BA1A1A. Generous whitespace, 4px spacing grid, WCAG AA contrast, always pair status color with an icon and label. Desktop frame 1440px wide unless stated.
 ```
 
 ### 6.2 Shared sample data (keep consistent across screens)

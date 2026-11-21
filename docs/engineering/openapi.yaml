@@ -1,0 +1,945 @@
+openapi: 3.1.0
+info:
+  title: GitHub-Verified Skills Recruitment Platform API
+  version: 1.0.0
+  description: |
+    REST contract for the MVP defined in TRD.md §6. All routes are versioned under /api/v1.
+    Roles are enforced on the server for every route. The apply gate is decided by the API only;
+    the UI shows the same result so the candidate understands it.
+
+    Conventions:
+    - One error shape everywhere: `code` plus `message`, with extra fields where useful.
+    - A failed gate returns 403 with `missing_skills`.
+    - Verification is asynchronous: POST returns a job id, GET is the source of truth.
+    - `/candidates`, `/jobs` and `/jobs/{id}/applications` are paginated with `page` and `per_page` (max 100) and return `meta`. Per-user lists that cannot grow without bound (`/me/claimed-skills`, verification results) return plain arrays.
+servers:
+  - url: /api/v1
+security:
+  - bearerAuth: []
+tags:
+  - name: auth
+  - name: candidate
+  - name: verification
+  - name: recruiter
+  - name: jobs
+  - name: me
+paths:
+  /auth/signup:
+    post:
+      tags: [auth]
+      summary: Create a candidate or recruiter account
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignupRequest'
+      responses:
+        '202':
+          description: Account created; email verification sent. No session is issued until the address is verified (PRD F1).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignupAccepted'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /auth/login:
+    post:
+      tags: [auth]
+      summary: Sign in with email and password
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Signed in
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          description: Email address not verified yet
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /auth/refresh:
+    post:
+      tags: [auth]
+      summary: Exchange a refresh token for a new access token
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefreshRequest'
+      responses:
+        '200':
+          description: New access and refresh tokens
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /auth/github/callback:
+    get:
+      tags: [auth]
+      summary: Complete GitHub OAuth and store a read-only token
+      description: Optional in the MVP (decision D8). Stores the encrypted token and nothing else.
+      parameters:
+        - name: code
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: state
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '302':
+          description: Redirects back to the onboarding step
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /me/profile:
+    put:
+      tags: [me]
+      summary: Update basic profile information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfileUpdate'
+      responses:
+        '200':
+          description: Updated profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /me/cv:
+    post:
+      tags: [candidate]
+      summary: Upload a CV and start parsing
+      description: Responds immediately with the CV record; parsing runs in the worker.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: PDF or DOCX, max size enforced server side
+      responses:
+        '202':
+          description: Accepted for parsing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cv'
+        '415':
+          $ref: '#/components/responses/BadRequest'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /me/claimed-skills:
+    get:
+      tags: [candidate]
+      summary: Review skills extracted from the CV
+      responses:
+        '200':
+          description: Claimed skills with confidence of extraction and confirmation state
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClaimedSkill'
+    put:
+      tags: [candidate]
+      summary: Confirm, edit or remove extracted skills
+      description: Only confirmed skills are sent to verification.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ClaimedSkillUpdate'
+      responses:
+        '200':
+          description: Updated claimed skills
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClaimedSkill'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /me/github/consent:
+    post:
+      tags: [candidate]
+      summary: Record consent to scan public repositories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [consent]
+              properties:
+                consent:
+                  type: boolean
+                  const: true
+      responses:
+        '200':
+          description: Consent recorded with a timestamp; scanning is now allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /me/verification:
+    post:
+      tags: [verification]
+      summary: Start or re-run a verification job
+      description: Returns a job id. A repeat call while a job is running returns the running job.
+      responses:
+        '202':
+          description: Job accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerificationState'
+        '403':
+          description: Consent to scan public repositories has not been recorded (invariant 5), or GitHub is not linked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+    get:
+      tags: [verification]
+      summary: Job status and per-skill results with reasons
+      responses:
+        '200':
+          description: Current state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerificationState'
+  /candidates:
+    get:
+      tags: [recruiter]
+      summary: Search candidates by verified skills
+      description: Reads only current rows with status verified.
+      parameters:
+        - name: skills
+          in: query
+          description: Comma-separated skill ids; every id must be verified
+          schema:
+            type: string
+        - name: min_confidence
+          in: query
+          schema:
+            type: number
+            format: float
+            minimum: 0
+            maximum: 1
+        - name: location
+          in: query
+          schema:
+            type: string
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PerPage'
+      responses:
+        '200':
+          description: Ranked candidate summaries
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandidateList'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /candidates/{id}:
+    get:
+      tags: [recruiter]
+      summary: Candidate profile with evidence for each verified skill
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Profile; contact details masked until the candidate applies
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandidateDetail'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /jobs:
+    get:
+      tags: [jobs]
+      summary: List open jobs
+      parameters:
+        - name: mine
+          in: query
+          description: Recruiters only; returns draft and closed jobs too
+          schema:
+            type: boolean
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PerPage'
+      responses:
+        '200':
+          description: Jobs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobList'
+    post:
+      tags: [jobs]
+      summary: Create a job with required skills and match rule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /jobs/{id}:
+    get:
+      tags: [jobs]
+      summary: Job detail
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Job
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      tags: [jobs]
+      summary: Edit or close a job (owner only)
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobInput'
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      tags: [jobs]
+      summary: Delete a job (owner only)
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '204':
+          description: Deleted
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /jobs/{id}/eligibility:
+    get:
+      tags: [jobs]
+      summary: Matched and missing required skills for the signed-in candidate
+      description: "Reports the gate result. When the job stores `enforce_gate: false` the gate is a ranking signal, so `eligible` is true and `missing_skills` is informational (decision D1)."
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Eligibility
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Eligibility'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /jobs/{id}/apply:
+    post:
+      tags: [jobs]
+      summary: Apply; rejected with missing skills if the gate fails
+      description: "The 403 only applies when the job has `enforce_gate: true`. With `enforce_gate: false` the application is accepted and the gate result is recorded as a ranking signal (decision D1)."
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '201':
+          description: Applied; matched and missing skills snapshotted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        '403':
+          description: Gate failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GateError'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /jobs/{id}/applications:
+    get:
+      tags: [recruiter]
+      summary: Applicants with matched and missing skills (owner only)
+      parameters:
+        - $ref: '#/components/parameters/Id'
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PerPage'
+      responses:
+        '200':
+          description: Applicants
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationList'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /me:
+    get:
+      tags: [me]
+      summary: Download everything held about the account
+      description: One JSON document with profile, claimed skills, verifications and their evidence, and applications. This is the export promised in legal/CONSENT_AND_PRIVACY.md, not a profile view.
+      responses:
+        '200':
+          description: Full export
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+    delete:
+      tags: [me]
+      summary: Delete account and personal data
+      description: The server deletes each CV object from the bucket first, then deletes the account, whose cascade removes profile, repo data, verification rows and evidence. Audit entries keep only the pseudonymous actor id (invariant 9).
+      responses:
+        '204':
+          description: Deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+  responses:
+    BadRequest:
+      description: Invalid input
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or expired session
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: Wrong role or not the owner
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Conflict:
+      description: Duplicate or conflicting state
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Too many requests
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code:
+          type: string
+          examples: [invalid_input]
+        message:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+    GateError:
+      type: object
+      required: [code, message, missing_skills]
+      properties:
+        code:
+          type: string
+          const: gate_failed
+        message:
+          type: string
+        missing_skills:
+          type: array
+          items:
+            type: string
+          description: Skill ids the job requires and the candidate has not verified
+    SignupRequest:
+      type: object
+      required: [email, password, name, role]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+        name:
+          type: string
+        role:
+          type: string
+          enum: [candidate, recruiter]
+        company_name:
+          type: string
+          description: Required when role is recruiter
+    SignupAccepted:
+      type: object
+      required: [user_id, email, role, email_verified]
+      description: No session is issued at sign-up; the address must be verified first (PRD F1).
+      properties:
+        user_id:
+          type: string
+          format: uuid
+        email:
+          type: string
+        role:
+          type: string
+          enum: [candidate, recruiter]
+        email_verified:
+          type: boolean
+          const: false
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+    RefreshRequest:
+      type: object
+      required: [refresh_token]
+      properties:
+        refresh_token:
+          type: string
+    AuthResponse:
+      type: object
+      required: [access_token, refresh_token, expires_in, user]
+      properties:
+        access_token:
+          type: string
+        refresh_token:
+          type: string
+          description: Rotated on every refresh; stored hashed server side
+        expires_in:
+          type: integer
+          description: Access token lifetime in seconds (`JWT_TTL_SECONDS`, 900 by default)
+        user:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+            email:
+              type: string
+            role:
+              type: string
+              enum: [candidate, recruiter, admin]
+            email_verified:
+              type: boolean
+    ProfileUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        headline:
+          type: string
+        location:
+          type: string
+        allow_partial_public:
+          type: boolean
+          description: Show partial skills to recruiters (decision D16)
+    Profile:
+      type: object
+      properties:
+        user_id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        headline:
+          type: string
+        location:
+          type: string
+        github_username:
+          type: string
+        consent_scan_at:
+          type: ['string', 'null']
+          format: date-time
+        allow_partial_public:
+          type: boolean
+    Cv:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        uploaded_at:
+          type: string
+          format: date-time
+        parse_state:
+          type: string
+          enum: [queued, parsed, failed]
+    ClaimedSkill:
+      type: object
+      properties:
+        skill_id:
+          type: string
+        name:
+          type: string
+        source_text:
+          type: string
+        confirmed_by_candidate:
+          type: boolean
+    ClaimedSkillUpdate:
+      type: object
+      required: [skill_id]
+      properties:
+        skill_id:
+          type: string
+        confirmed:
+          type: boolean
+          description: false removes the claim before scanning
+    VerificationState:
+      type: object
+      properties:
+        job_id:
+          type: string
+        state:
+          type: string
+          enum: [queued, running, paused, completed, failed]
+        steps:
+          type: array
+          items:
+            type: string
+          description: Fetch repos, collect evidence, match skills, score, publish
+        completed_steps:
+          type: integer
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkillVerification'
+    SkillVerification:
+      type: object
+      properties:
+        skill_id:
+          type: string
+        name:
+          type: string
+        status:
+          type: string
+          enum: [verified, partial, not_verified]
+        confidence:
+          type: number
+          format: float
+        rule_version:
+          type: string
+        scanned_at:
+          type: string
+          format: date-time
+        reason:
+          type: string
+          description: Present for partial and not_verified
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/Evidence'
+    Evidence:
+      type: object
+      properties:
+        repo:
+          type: string
+        evidence_type:
+          type: string
+          enum: [source_file, commit, manifest, language, recency, multi_repo]
+        file_path:
+          type: string
+        authored_lines:
+          type: integer
+        detail:
+          type: object
+          additionalProperties: true
+    CandidateSummary:
+      type: object
+      properties:
+        candidate_id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        headline:
+          type: string
+        location:
+          type: string
+        matched_skills:
+          type: array
+          items:
+            type: string
+    CandidateDetail:
+      type: object
+      properties:
+        candidate_id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        headline:
+          type: string
+        location:
+          type: string
+        contact:
+          type: ['object', 'null']
+          description: Null until the candidate applies to one of the recruiter's jobs
+          properties:
+            email:
+              type: string
+            phone:
+              type: string
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkillVerification'
+    CandidateList:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/CandidateSummary'
+    JobInput:
+      type: object
+      required: [title, description, skills]
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum: [draft, open, closed]
+        match_mode:
+          type: string
+          enum: [all, minimum]
+        min_match:
+          type: integer
+          minimum: 0
+        enforce_gate:
+          type: boolean
+          description: true blocks applications; false shows verified skills as a ranking signal (decision D1)
+        skills:
+          type: array
+          items:
+            type: object
+            required: [skill_id]
+            properties:
+              skill_id:
+                type: string
+              required:
+                type: boolean
+                default: true
+    Job:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        recruiter_id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+          enum: [draft, open, closed]
+        match_mode:
+          type: string
+          enum: [all, minimum]
+        min_match:
+          type: integer
+        enforce_gate:
+          type: boolean
+        skills:
+          type: array
+          items:
+            type: object
+            properties:
+              skill_id:
+                type: string
+              name:
+                type: string
+              required:
+                type: boolean
+        created_at:
+          type: string
+          format: date-time
+    JobList:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/Job'
+    Eligibility:
+      type: object
+      properties:
+        eligible:
+          type: boolean
+        match_mode:
+          type: string
+          enum: [all, minimum]
+        min_match:
+          type: integer
+        matched_skills:
+          type: array
+          items:
+            type: string
+        missing_skills:
+          type: array
+          items:
+            type: string
+    Application:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        job_id:
+          type: string
+          format: uuid
+        candidate_id:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [submitted, reviewed, shortlisted, rejected]
+        matched_skills:
+          type: array
+          items:
+            type: string
+        missing_skills:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
+    ApplicationList:
+      allOf:
+        - $ref: '#/components/schemas/Pagination'
+        - type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/Application'
+    Pagination:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            page:
+              type: integer
+            per_page:
+              type: integer
+            total:
+              type: integer

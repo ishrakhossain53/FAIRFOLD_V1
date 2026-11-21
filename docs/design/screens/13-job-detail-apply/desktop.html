@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#5e5f5a", "surface-variant": "#e2e2e2", "on-background": "#1a1c1c", "surface-container-lowest": "#ffffff", "secondary-container": "#dbded9", "on-secondary": "#ffffff", "tertiary-fixed": "#e4e2dd", "on-primary-fixed": "#092100", "inverse-surface": "#2f3131", "outline": "#717a68", "on-surface": "#1a1c1c", "on-tertiary-fixed": "#1b1c19", "on-primary": "#ffffff", "inverse-on-surface": "#f0f1f1", "tertiary-container": "#d6d5cf", "on-surface-variant": "#41493a", "error": "#ba1a1a", "outline-variant": "#c1cab5", "surface-tint": "#2f6c00", "surface-container-low": "#f3f3f4", "surface-container-highest": "#e2e2e2", "primary": "#2f6c00", "on-secondary-fixed-variant": "#444844", "surface-container": "#eeeeee", "primary-fixed-dim": "#91d963", "on-secondary-fixed": "#191c1a", "on-error-container": "#93000a", "inverse-primary": "#91d963", "surface-bright": "#f9f9f9", "surface-container-high": "#e8e8e8", "on-secondary-container": "#5e625e", "tertiary-fixed-dim": "#c8c6c1", "error-container": "#ffdad6", "on-tertiary-container": "#5c5c58", "surface-dim": "#dadada", "secondary-fixed-dim": "#c4c7c3", "on-primary-fixed-variant": "#225100", "background": "#f9f9f9", "on-error": "#ffffff", "primary-container": "#9fe870", "on-tertiary-fixed-variant": "#474743", "on-primary-container": "#2e6900", "on-tertiary": "#ffffff", "secondary-fixed": "#e0e3de", "primary-fixed": "#acf67c", "surface": "#f9f9f9", "secondary": "#5b5f5c" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "space-xl": "2.5rem", "margin-mobile": "1.25rem", "space-md": "1rem", "margin": "3rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem" }, fontFamily: { "label-md": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Manrope"], "headline-lg": ["Manrope"], "label-lg": ["Inter"], "body-lg": ["Inter"], "display-hero-mobile": ["Manrope"], "code-snippet": ["JetBrains Mono"], "body-sm": ["Inter"], "headline-lg-mobile": ["Manrope"], "headline-md": ["Manrope"], "display-hero": ["Manrope"] }, fontSize: { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "900" }], "code-snippet": ["13px", { "lineHeight": "20px", "fontWeight": "500" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "800" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "900" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><img alt="FairFold Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCqSs8i42LisnbSKJ94y8I0GuuHui9bF3hZd9XqYDYK7voeIZQb0WbM5V8p3ziRhlM5e1VJcl4jLQ63LKxsG_XhfJ5CXf-I5FotsL9onEWheGQZltM2nmVpNRVp02u0yVQzcFhIrwHTihatEgbNu7n04QgZxdJtfP_TVVd4zsP5trTEg7r_JSeyFzrSw9nKC3EfKjodmc8bPpHOVSz8vN1C-HpIzE34u-1GNWYDgnvy"/><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight ml-1 truncate max-w-[170px]">Job Details</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined">notifications</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9Lp7Slmm_AWuvp0QnGTHPoXfRjc6Ruc8tTlmc0H3OgP5UBIBCUFI6rXSsg95h-sF6KE_pq8yNPVELpgVLgMjEW0jAPR3_JcAvzTxa_MPOKbRiLtntb5kTFiwSxnAq4UKTy1If8JlHtNJ2lfnyE1q7Se4h8rBoSRkIygXgHyxbWDxdE3OkDWk6ChdDveiV5b_73xzRdgqXAcPX4K7Gd3_6QbAyeFpRYY4r__E_AE"/></div></div></header><main class="flex-1 flex flex-col relative w-full px-gutter-mobile pt-16 pb-safe bg-surface-container-high"><div class="flex flex-col w-full pb-8">
+<!-- Interactive Feedback Pill Notification -->
+<div class="fixed top-20 left-4 right-4 z-50 transform -translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm p-4 bg-inverse-surface text-inverse-on-surface rounded-lg shadow-xl" id="toast-applied">
+<span class="material-symbols-outlined text-primary-container text-[24px]">verified</span>
+<div class="flex-1 min-w-0">
+<p class="font-label-lg text-label-lg text-inverse-on-surface">Application Submitted!</p>
+<p class="font-body-sm text-body-sm text-surface-variant truncate">FairFold passport shared with BrightByte Ltd.</p>
+</div>
+</div>
+<!-- Job Header Card -->
+<section class="bg-surface-container-lowest rounded-lg p-5 mb-4 shadow-sm">
+<div class="flex items-start justify-between gap-space-sm mb-3">
+<div class="flex items-center gap-space-xs px-2.5 py-1 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">schedule</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Posted 3 days ago • 12 applicants</span>
+</div>
+<button aria-label="Bookmark position" class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<img alt="BrightByte Ltd company mark" class="w-12 h-12 rounded-xl object-cover bg-surface-container-high" data-alt="Minimalist modern fintech studio logo emblem featuring bold geometric angles in slate gray and vibrant electric lime on a crisp neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIN1yzReBodiF1L03qznzB9GeCKOx1-LyV_f9NR3R1l5eM5ssjQR4xoqqzvO06t47smuSJW6xEt09V-esslR1a9_8yZ1qNl6ARBQdh9GpTnrP-NRUR8j6BV_Inb1vZJLz4odjT4DUNQ1xipnaCyysFmlQEJA026sWg_4VOBwdvaNqxszLXUbSRPjtV1Y6RPcZTvH5pqZzkG3YIjw0cfHX_q8M9euhJMbvGgtjGLoI"/>
+<div class="min-w-0 flex-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-snug">Junior Full-Stack Developer</h2>
+<p class="font-body-sm text-body-sm text-tertiary truncate">BrightByte Ltd • Dhaka, Bangladesh (Hybrid)</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      We are building fintech tools for emerging markets. Looking for a developer who writes clean, tested TypeScript and Node.js backend services with React frontends.
+    </p>
+<!-- Quick stats ribbon -->
+<div class="grid grid-cols-3 gap-2 mt-4 pt-4 bg-surface-container-low rounded-DEFAULT p-3">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-tertiary">Comp</span>
+<span class="font-label-lg text-label-lg text-on-surface">$24k – $32k</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-tertiary">Type</span>
+<span class="font-label-lg text-label-lg text-on-surface">Full-time</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-tertiary">Equity</span>
+<span class="font-label-lg text-label-lg text-on-surface">0.25% - 0.5%</span>
+</div>
+</div>
+</section>
+<!-- Required Skills & Match Rule Card -->
+<section class="bg-surface-container-lowest rounded-lg p-5 mb-4 shadow-sm">
+<div class="flex items-center gap-space-xs p-3 mb-4 bg-secondary-container rounded-DEFAULT text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[20px] text-on-surface">balance</span>
+<p class="font-label-md text-label-md text-on-surface leading-tight">
+        Match rule: You need <span class="font-bold">ALL required skills verified</span> to apply.
+      </p>
+</div>
+<div class="flex flex-col gap-3">
+<div>
+<p class="font-label-md text-label-md text-tertiary uppercase tracking-wider mb-2">Required Skills</p>
+<div class="flex flex-wrap gap-2">
+<!-- React -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span class="font-label-md text-label-md">React</span>
+</div>
+<!-- Node.js -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span class="font-label-md text-label-md">Node.js</span>
+</div>
+<!-- TypeScript -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span class="font-label-md text-label-md">TypeScript</span>
+</div>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-tertiary uppercase tracking-wider mb-2">Nice-to-Have (Optional)</p>
+<div class="flex flex-wrap gap-2">
+<!-- Docker -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[16px] text-tertiary">remove</span>
+<span class="font-label-md text-label-md">Docker (Missing)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The FairFold Apply Gate Card (Passed State) -->
+<section class="bg-surface-container-lowest rounded-lg p-5 mb-4 shadow-md bg-gradient-to-b from-surface-container-lowest via-surface-container-lowest to-surface-container-low">
+<!-- Header with Verification Status -->
+<div class="flex items-center gap-3 pb-4 mb-4 bg-surface-container-low p-4 rounded-DEFAULT">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-container text-[28px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wide">Verification Passed</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">3 of 3 required skills</h3>
+</div>
+</div>
+<!-- Skill Breakdown List -->
+<div class="flex flex-col gap-3 mb-5">
+<!-- Item 1: React -->
+<div class="p-3 rounded-DEFAULT bg-surface-bright flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface">React</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+              Verified
+            </span>
+</div>
+<span class="font-code-snippet text-code-snippet text-on-surface font-semibold">0.82 conf</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-tertiary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">source</span>
+            6 repos backed
+          </span>
+<span class="font-label-md text-label-md text-primary">High Confidence</span>
+</div>
+<div class="w-full bg-secondary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+<!-- Item 2: Node.js -->
+<div class="p-3 rounded-DEFAULT bg-surface-bright flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface">Node.js</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+              Verified
+            </span>
+</div>
+<span class="font-code-snippet text-code-snippet text-on-surface font-semibold">0.74 conf</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-tertiary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">source</span>
+            4 repos backed
+          </span>
+<span class="font-label-md text-label-md text-primary">Solid match</span>
+</div>
+<div class="w-full bg-secondary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 74%;"></div>
+</div>
+</div>
+<!-- Item 3: TypeScript -->
+<div class="p-3 rounded-DEFAULT bg-surface-bright flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface">TypeScript</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+              Verified
+            </span>
+</div>
+<span class="font-code-snippet text-code-snippet text-on-surface font-semibold">0.68 conf</span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-tertiary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">source</span>
+            3 repos backed
+          </span>
+<span class="font-label-md text-label-md text-primary">Validated</span>
+</div>
+<div class="w-full bg-secondary-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+<!-- Candidate Privacy Disclosure -->
+<div class="p-3 rounded-DEFAULT bg-surface-container-low mb-5 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5">lock_person</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+        Applying will share your verified GitHub profile and contact email (<span class="font-medium text-on-surface">nusrat@example.com</span>) with BrightByte Ltd.
+      </p>
+</div>
+<!-- Primary Action Pill Button -->
+<button class="w-full h-12 rounded-full bg-primary-container text-on-primary-fixed font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all" id="apply-btn" onclick="triggerApply()">
+<span class="material-symbols-outlined text-[20px]">send</span>
+      Apply now with Verified Profile
+    </button>
+</section>
+<!-- Secondary Variant Panel: Transparency & Audit Preview -->
+<section class="bg-surface-container-lowest rounded-lg p-5 mb-4 shadow-sm">
+<div class="flex items-center justify-between cursor-pointer" onclick="toggleAuditPanel()">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-tertiary">policy</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[17px]">Gate Audit Scenario</h4>
+</div>
+<span class="material-symbols-outlined text-tertiary transition-transform duration-200" id="audit-chevron">expand_more</span>
+</div>
+<p class="font-body-sm text-body-sm text-tertiary mt-1 mb-3">
+      Previewing how FairFold transparently blocks ineligible applications without silent rejections.
+    </p>
+<!-- Blocked gate simulation box -->
+<div class="bg-surface-container-low rounded-DEFAULT p-4 flex flex-col gap-3" id="audit-content">
+<!-- Error / Blocked Status Banner -->
+<div class="p-3 rounded-DEFAULT bg-error-container text-on-error-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">error</span>
+<div>
+<p class="font-label-lg text-label-lg font-semibold text-error">Apply unavailable</p>
+<p class="font-body-sm text-body-sm text-on-error-container">Missing 2 required skills (Docker, Kubernetes)</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full h-10 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+          Re-run verification
+        </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="h-10 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">search</span>
+            View missing evidence
+          </button>
+<button class="h-10 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+            Dispute result
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Job Details: Responsibilities & Benefits Accordion -->
+<section class="bg-surface-container-lowest rounded-lg p-5 mb-4 shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<img alt="Engineering team culture" class="w-16 h-16 rounded-xl object-cover" data-alt="Vibrant modern Dhaka software engineering team working on microservices in a sunny open-concept office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIev22V8tnTIM-toVBogAXuXDXm7UQhxGT6z5I1LvFX-DvXfdxwqHjjaa6QGl928D28BBVWjAvaL-ccaNM6dwjA78hTo_YLH7eK6kwHLcJHgo7DkMPHaJ_KZyCt_LhlpL6oSBXr1WZGVgMMFqpPHPpPbgAlyVojw8jY_zmjkV0aPIaQOPF4VuRei65lUyIOtdzu-lqR-lDlXB8ag0nYRCGl4FCsjD8MzuSDCq9qs"/>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">About the Role</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Core Platform &amp; Wallet Integrations</p>
+</div>
+</div>
+<!-- Accordion 1: Responsibilities -->
+<div class="bg-surface-bright rounded-DEFAULT overflow-hidden">
+<button class="w-full p-4 flex items-center justify-between text-left" onclick="toggleAccordion('resp-content', 'resp-icon')">
+<span class="font-label-lg text-label-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">checklist</span>
+          Key Responsibilities
+        </span>
+<span class="material-symbols-outlined text-tertiary transition-transform duration-200" id="resp-icon">expand_less</span>
+</button>
+<div class="px-4 pb-4" id="resp-content">
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Architect and deploy typed REST &amp; GraphQL endpoints in Node.js.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Build component libraries in React matching strict accessibility criteria.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check</span>
+<span>Write deterministic unit and integration test suites using Vitest.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Accordion 2: Benefits & Perks -->
+<div class="bg-surface-bright rounded-DEFAULT overflow-hidden">
+<button class="w-full p-4 flex items-center justify-between text-left" onclick="toggleAccordion('benefits-content', 'benefits-icon')">
+<span class="font-label-lg text-label-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">volunteer_activism</span>
+          Benefits &amp; Culture
+        </span>
+<span class="material-symbols-outlined text-tertiary transition-transform duration-200" id="benefits-icon">expand_more</span>
+</button>
+<div class="px-4 pb-4 hidden" id="benefits-content">
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">bolt</span>
+<span>Quarterly hardware &amp; home office equipment allowance.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">bolt</span>
+<span>Flexible hybrid rhythm: 2 office collaboration days in Gulshan 2.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">bolt</span>
+<span>Continuous learning stipend for conferences, books, and courses.</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Location preview using static map pipelining -->
+<div class="bg-surface-container-lowest rounded-lg p-5 mb-2 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">location_on</span>
+<span class="font-label-lg text-label-lg text-on-surface">Office Location</span>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary">Gulshan 2, Dhaka</span>
+</div>
+<div class="w-full h-36 bg-cover bg-center rounded-DEFAULT overflow-hidden" data-location="Gulshan 2, Dhaka, Bangladesh" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8vcuOTdvYhQi7uo3U0EB9sKyQtOFdkLfsY_l_s_HnUFHqz5F3dPnJcnrrmuTPnvqQeDde_JBmNE02SFoaRgmHbx9g985YrvHJ-yKjxqzIWzgg1h4Jx3kruU6a-gKSxx-3rjzgNj5JTGgwFMMdDFc3qn0ArNnoinaSougMw8iAkD2OMTdKGkoDCF-KNtWUAbWkTkuHYk4tvudDBAbyM8yNi7WEKkLdyCxOg5BSHgI')">
+</div>
+</div>
+</div>
+<script>
+  function toggleAccordion(contentId, iconId) {
+    const content = document.getElementById(contentId);
+    const icon = document.getElementById(iconId);
+    if (!content || !icon) return;
+
+    const isHidden = content.classList.contains('hidden');
+    if (isHidden) {
+      content.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      content.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function toggleAuditPanel() {
+    const content = document.getElementById('audit-content');
+    const chevron = document.getElementById('audit-chevron');
+    if (!content || !chevron) return;
+    
+    if (content.style.display === 'none') {
+      content.style.display = 'flex';
+      chevron.style.transform = 'rotate(0deg)';
+    } else {
+      content.style.display = 'none';
+      chevron.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  function triggerApply() {
+    const btn = document.getElementById('apply-btn');
+    const toast = document.getElementById('toast-applied');
+    if (!btn || !toast) return;
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Submitting...';
+    btn.classList.add('opacity-80');
+
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> Profile Dispatched';
+      btn.classList.replace('bg-primary-container', 'bg-secondary-container');
+      btn.classList.replace('text-on-primary-fixed', 'text-on-secondary-fixed');
+      
+      toast.classList.remove('opacity-0', '-translate-y-24');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-24');
+      }, 3500);
+    }, 700);
+  }
+</script></main></body></html>

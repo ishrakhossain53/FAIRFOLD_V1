@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary": "#ffffff", "on-error": "#ffffff", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#444844", "on-surface-variant": "#41493a", "inverse-primary": "#91d963", "surface-container": "#eeeeee", "on-primary-fixed-variant": "#225100", "tertiary-container": "#d6d5cf", "background": "#f9f9f9", "primary-fixed-dim": "#91d963", "surface-container-high": "#e8e8e8", "secondary-fixed-dim": "#c4c7c3", "on-background": "#1a1c1c", "on-secondary": "#ffffff", "surface": "#f9f9f9", "inverse-surface": "#2f3131", "surface-container-highest": "#e2e2e2", "on-secondary-container": "#5e625e", "surface-variant": "#e2e2e2", "primary": "#2f6c00", "tertiary-fixed": "#e4e2dd", "on-primary-container": "#2e6900", "on-tertiary-fixed-variant": "#474743", "tertiary": "#5e5f5a", "secondary-fixed": "#e0e3de", "on-tertiary": "#ffffff", "primary-container": "#9fe870", "on-surface": "#1a1c1c", "on-tertiary-container": "#5c5c58", "error": "#ba1a1a", "surface-container-low": "#f3f3f4", "error-container": "#ffdad6", "secondary-container": "#dbded9", "secondary": "#5b5f5c", "surface-bright": "#f9f9f9", "surface-dim": "#dadada", "surface-container-lowest": "#ffffff", "primary-fixed": "#acf67c", "outline": "#717a68", "on-secondary-fixed": "#191c1a", "tertiary-fixed-dim": "#c8c6c1", "on-tertiary-fixed": "#1b1c19", "surface-tint": "#2f6c00", "inverse-on-surface": "#f0f1f1", "outline-variant": "#c1cab5", "on-primary-fixed": "#092100" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "gutter": "1.5rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin": "3rem", "space-lg": "1.5rem", "gutter-mobile": "1rem" }, "fontFamily": { "label-md": [ "Inter" ], "headline-lg": [ "Manrope" ], "label-lg": [ "Inter" ], "display-hero": [ "Manrope" ], "body-lg": [ "Inter" ], "headline-sm": [ "Manrope" ], "headline-md": [ "Manrope" ], "display-hero-mobile": [ "Manrope" ], "code-snippet": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Manrope" ], "body-sm": [ "Inter" ], "body-md": [ "Inter" ] }, "fontSize": { "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "display-hero": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "900" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "800" } ], "headline-md": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "800" } ], "display-hero-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "900" } ], "code-snippet": [ "13px", { "lineHeight": "20px", "fontWeight": "500" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "body-sm": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "body-md": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(14,15,12,0.04)]"><div class="h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-xs" data-path="dashboard" href="#"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[18px]">verified</span></div><span class="font-headline-md text-headline-sm font-extrabold tracking-tight text-on-surface">FairFold</span></a><nav class="hidden md:flex items-center gap-space-xs p-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-full"><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="dashboard" href="#">Dashboard</a><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-full" data-path="jobs" href="#">Jobs</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-applications" href="#">My applications</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="settings" href="#">Settings</a></nav></div><div class="flex items-center gap-space-lg"><a class="hidden lg:flex items-center gap-1.5 px-space-md py-space-sm rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container hover:text-on-surface transition-colors" data-path="verified-profile" href="#"><span class="material-symbols-outlined text-primary text-[16px]">workspace_premium</span><span>My Verified Profile</span></a><div class="flex items-center gap-space-sm pl-space-sm"><div class="hidden sm:flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface">Nusrat Jahan</span><span class="font-label-md text-label-md text-tertiary font-normal">Junior Full-Stack Developer</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-[#E8EBE6] min-h-screen"><div class="flex flex-col w-full">
+<div class="max-w-[1360px] mx-auto w-full px-margin-mobile md:px-margin py-space-xl">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-code-snippet text-code-snippet mb-3">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>PROTOCOL GATE: AUTOMATIC ELIGIBILITY</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Explore Open Roles</h1>
+<p class="font-body-lg text-body-lg text-secondary mt-1 max-w-2xl">
+          Jobs curated for your verified skill profile. Apply instantly where your verified code proves eligibility without manual screening friction.
+        </p>
+</div>
+<!-- Quick Status Metric Banner -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-lg py-space-md rounded-lg shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm">
+          8
+        </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Immediately Eligible</span>
+<span class="font-body-sm text-body-sm text-secondary">Out of 24 open roles</span>
+</div>
+</div>
+</div>
+<!-- Filter Control Board (White Card) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl mb-space-xl shadow-sm">
+<div class="flex flex-col gap-space-lg">
+<!-- Search Input with Search Pill Bar -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary text-[22px]">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest rounded-full font-body-md text-body-md text-on-surface placeholder:text-tertiary focus:outline-none focus:ring-2 focus:ring-on-surface" placeholder="Search jobs by title, company, or tech stack..." type="text"/>
+</div>
+<!-- Filter Clusters -->
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex flex-wrap items-center gap-2">
+<!-- Eligibility Segment Group -->
+<div class="inline-flex p-1 bg-surface-container-low rounded-full gap-1">
+<button class="px-4 py-1.5 rounded-full bg-on-surface text-surface-container-lowest font-label-md text-label-md transition-all">
+                All jobs (24)
+              </button>
+<button class="px-4 py-1.5 rounded-full bg-transparent hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Eligible to apply (8)
+              </button>
+<button class="px-4 py-1.5 rounded-full bg-transparent hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all">
+                Needs 1-2 skills (12)
+              </button>
+</div>
+<div class="hidden xl:block h-6 w-px bg-surface-container-high mx-1"></div>
+<!-- Location Dropdown Pill -->
+<div class="relative">
+<button class="h-10 px-4 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md inline-flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-tertiary">location_on</span>
+<span>Location: All</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">expand_more</span>
+</button>
+</div>
+<!-- Tech Stack Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto py-1">
+<button class="h-10 px-3.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md inline-flex items-center gap-1">
+<span>React</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="h-10 px-3.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md inline-flex items-center gap-1">
+<span>Node.js</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</button>
+<button class="h-10 px-3.5 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">
+                + TypeScript
+              </button>
+<button class="h-10 px-3.5 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">
+                + Docker
+              </button>
+</div>
+</div>
+<!-- Sort Select -->
+<div class="flex items-center gap-2 self-end lg:self-center">
+<span class="font-label-md text-label-md text-tertiary">Sort:</span>
+<button class="h-10 px-4 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md inline-flex items-center gap-1.5 transition-colors">
+<span class="font-semibold">Best match</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Feedback Context String -->
+<div class="flex items-center justify-between text-tertiary pt-space-xs font-body-sm text-body-sm">
+<span>Showing 24 open engineering roles • 8 immediately eligible for direct pipeline dispatch</span>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#">
+<span>Clear all filters</span>
+<span class="material-symbols-outlined text-[14px]">close</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Main Workspace Split: Listings + Live Protocol Sidebar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Primary Stream (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Job Card 1: Eligible (Perfect Match) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between transition-all hover:translate-y-[-2px] shadow-sm">
+<div>
+<!-- Top Card Header -->
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-2xl bg-on-surface text-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm font-black tracking-tight shrink-0">
+                  BB
+                </div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface font-extrabold">Junior Full-Stack Developer</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+                      Verified Match
+                    </span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md text-secondary mt-1 font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">BrightByte Ltd</span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">location_on</span>
+                      Dhaka, Bangladesh (Hybrid)
+                    </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">payments</span>
+                      $18,000 - $24,000 / yr
+                    </span>
+<span>•</span>
+<span class="text-tertiary">Posted 2d ago</span>
+</div>
+</div>
+</div>
+<button class="text-tertiary hover:text-on-surface p-2 rounded-full hover:bg-surface-container-low transition-colors" title="Save Job">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<!-- Required Skills Breakdown -->
+<div class="mt-space-lg">
+<span class="font-label-md text-label-md text-tertiary block mb-2 uppercase tracking-wider">Required Skills Validation</span>
+<div class="flex flex-wrap gap-2">
+<!-- React -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px] font-bold">check_circle</span>
+<span>React</span>
+<span class="font-code-snippet opacity-75">(Verified 0.82)</span>
+</div>
+<!-- Node.js -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px] font-bold">check_circle</span>
+<span>Node.js</span>
+<span class="font-code-snippet opacity-75">(Verified 0.74)</span>
+</div>
+<!-- TypeScript -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px] font-bold">check_circle</span>
+<span>TypeScript</span>
+<span class="font-code-snippet opacity-75">(Verified 0.68)</span>
+</div>
+</div>
+</div>
+<!-- Nice To Have Optional -->
+<div class="mt-space-sm flex items-center gap-2 text-secondary">
+<span class="font-label-md text-label-md text-tertiary">Nice to have:</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+                Docker (Optional)
+              </span>
+</div>
+</div>
+<!-- Card Bottom Eligibility Action Frame -->
+<div class="mt-space-lg pt-space-md bg-surface-container-low rounded-2xl p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="inline-flex items-center gap-1.5 text-[#054D28] font-headline-sm text-label-lg font-bold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>You match 3 of 3 required skills (Eligible)</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+                Match rule: All required skills verified. Your public GitHub evidence qualifies you.
+              </p>
+</div>
+<a class="h-12 px-6 rounded-full bg-primary-container hover:bg-[#8ED85F] text-on-surface font-label-lg text-label-lg font-extrabold inline-flex items-center justify-center gap-2 transition-all active:scale-[0.98] shrink-0" href="#">
+<span>View job &amp; Apply</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Job Card 2: Blocked / Missing Skills (Fair Gate in Action) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between shadow-sm opacity-95">
+<div>
+<!-- Top Card Header -->
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-highest text-secondary flex items-center justify-center font-headline-sm text-headline-sm font-black tracking-tight shrink-0">
+                  CT
+                </div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface font-extrabold">Backend Engineer (Cloud Infrastructure)</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
+                      Gate Locked
+                    </span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md text-secondary mt-1 font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">Cloudline Technologies</span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">public</span>
+                      Remote (Global / Asia-friendly)
+                    </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">payments</span>
+                      $35,000 - $48,000 / yr
+                    </span>
+<span>•</span>
+<span class="text-tertiary">Posted 3d ago</span>
+</div>
+</div>
+</div>
+<button class="text-tertiary hover:text-on-surface p-2 rounded-full hover:bg-surface-container-low transition-colors" title="Save Job">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<!-- Required Skills Breakdown with Mixed Verification States -->
+<div class="mt-space-lg">
+<span class="font-label-md text-label-md text-tertiary block mb-2 uppercase tracking-wider">Required Skills Validation</span>
+<div class="flex flex-wrap gap-2">
+<!-- Node.js: Verified -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>Node.js</span>
+<span class="font-code-snippet opacity-75">(Verified 0.74)</span>
+</div>
+<!-- PostgreSQL: Partial -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFF4C2] text-[#5C4800] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">timelapse</span>
+<span>PostgreSQL</span>
+<span class="font-code-snippet opacity-75">(Partial 0.45)</span>
+</div>
+<!-- Docker: Not Verified -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px] text-tertiary">info</span>
+<span>Docker</span>
+<span class="font-code-snippet text-tertiary">(Not verified)</span>
+</div>
+<!-- Kubernetes: Missing -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">cancel</span>
+<span>Kubernetes</span>
+<span class="font-code-snippet opacity-75">(Missing)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Bottom Eligibility Action Frame -->
+<div class="mt-space-lg pt-space-md bg-surface-container-low rounded-2xl p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="inline-flex items-center gap-1.5 text-on-surface font-headline-sm text-label-lg font-bold">
+<span class="material-symbols-outlined text-[18px] text-tertiary">lock</span>
+<span>Missing 2 skills (Docker, Kubernetes)</span>
+</div>
+<div class="flex items-center gap-3 mt-0.5">
+<p class="font-body-sm text-body-sm text-secondary">Gate requires 4 of 4 verified proficiencies.</p>
+<a class="font-label-md text-label-md text-on-surface underline hover:text-primary transition-colors" href="#">How to verify missing skills →</a>
+</div>
+</div>
+<a class="h-12 px-6 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg font-bold inline-flex items-center justify-center gap-2 transition-all shrink-0" href="#">
+<span>View requirements</span>
+</a>
+</div>
+</div>
+<!-- Job Card 3: Near Match (1 Skill Missing) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between shadow-sm">
+<div>
+<!-- Top Card Header -->
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-2xl bg-on-surface text-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm font-black tracking-tight shrink-0">
+                  AN
+                </div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface font-extrabold">Mobile &amp; Web Developer</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+                      1 Skill Away
+                    </span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md text-secondary mt-1 font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">AppNest Software</span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">apartment</span>
+                      Dhaka, Bangladesh (On-site)
+                    </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">payments</span>
+                      $20,000 - $28,000 / yr
+                    </span>
+<span>•</span>
+<span class="text-tertiary">Posted 5d ago</span>
+</div>
+</div>
+</div>
+<button class="text-tertiary hover:text-on-surface p-2 rounded-full hover:bg-surface-container-low transition-colors" title="Save Job">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<!-- Skills -->
+<div class="mt-space-lg">
+<span class="font-label-md text-label-md text-tertiary block mb-2 uppercase tracking-wider">Required Skills Validation</span>
+<div class="flex flex-wrap gap-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>React</span>
+<span class="font-code-snippet opacity-75">(Verified 0.82)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>TypeScript</span>
+<span class="font-code-snippet opacity-75">(Verified 0.68)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px] text-tertiary">info</span>
+<span>Flutter</span>
+<span class="font-code-snippet text-tertiary">(Not verified)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="mt-space-lg pt-space-md bg-surface-container-low rounded-2xl p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="inline-flex items-center gap-1.5 text-on-surface font-headline-sm text-label-lg font-bold">
+<span class="material-symbols-outlined text-[18px] text-tertiary">pending</span>
+<span>Missing 1 skill (Flutter)</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+                2 of 3 required skills verified. Add a Flutter repository to verify and unlock application.
+              </p>
+</div>
+<a class="h-12 px-6 rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg font-bold inline-flex items-center justify-center gap-2 hover:bg-surface-container transition-all shadow-sm shrink-0" href="#">
+<span>View job details</span>
+</a>
+</div>
+</div>
+<!-- Job Card 4: Eligible (Frontend Specialist) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg md:p-space-xl flex flex-col justify-between transition-all hover:translate-y-[-2px] shadow-sm">
+<div>
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-2xl bg-[#1A3826] text-primary-container flex items-center justify-center font-headline-sm text-headline-sm font-black tracking-tight shrink-0">
+                  FS
+                </div>
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface font-extrabold">Frontend Engineer (Design Systems)</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+                      Verified Match
+                    </span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md text-secondary mt-1 font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">FinScale Payments</span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">public</span>
+                      Remote / Dhaka
+                    </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">payments</span>
+                      $22,000 - $30,000 / yr
+                    </span>
+<span>•</span>
+<span class="text-tertiary">Posted 1d ago</span>
+</div>
+</div>
+</div>
+<button class="text-tertiary hover:text-on-surface p-2 rounded-full hover:bg-surface-container-low transition-colors" title="Save Job">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<div class="mt-space-lg">
+<span class="font-label-md text-label-md text-tertiary block mb-2 uppercase tracking-wider">Required Skills Validation</span>
+<div class="flex flex-wrap gap-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>React</span>
+<span class="font-code-snippet opacity-75">(Verified 0.82)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>TypeScript</span>
+<span class="font-code-snippet opacity-75">(Verified 0.68)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low rounded-2xl p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="inline-flex items-center gap-1.5 text-[#054D28] font-headline-sm text-label-lg font-bold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>You match 2 of 2 required skills (Eligible)</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+                100% verified alignment with code artifacts from 4 repositories.
+              </p>
+</div>
+<a class="h-12 px-6 rounded-full bg-primary-container hover:bg-[#8ED85F] text-on-surface font-label-lg text-label-lg font-extrabold inline-flex items-center justify-center gap-2 transition-all active:scale-[0.98] shrink-0" href="#">
+<span>View job &amp; Apply</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Protocol Verification Sidebar (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Sidebar Card 1: Nusrat's Verification Snapshot -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between border-b pb-space-sm mb-space-md border-surface-container">
+<span class="font-label-md text-label-md uppercase tracking-wider text-tertiary">My Profile</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#E2F6D5] text-[#054D28] font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Live Synced
+            </span>
+</div>
+<div class="flex items-center gap-space-md mb-space-md">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">
+              NJ
+            </div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Nusrat Jahan</h3>
+<p class="font-body-sm text-body-sm text-secondary">Junior Full-Stack Developer</p>
+<p class="font-code-snippet text-code-snippet text-tertiary">Dhaka, BD • FF-8829-NJ</p>
+</div>
+</div>
+<div class="space-y-2.5 bg-surface-container-low p-space-md rounded-2xl mb-space-md">
+<div class="flex items-center justify-between text-on-surface font-label-md text-label-md">
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[#054D28] text-[16px]">check_circle</span>
+                Verified Skills (3)
+              </span>
+<span class="font-code-snippet text-on-surface">React, Node, TS</span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-label-md text-label-md">
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[#8B6E00] text-[16px]">timelapse</span>
+                Partial Skills (1)
+              </span>
+<span class="font-code-snippet text-on-surface">PostgreSQL</span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-label-md text-label-md">
+<span class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-tertiary text-[16px]">cancel</span>
+                Not Verified (2)
+              </span>
+<span class="font-code-snippet text-tertiary">Docker, Flutter</span>
+</div>
+</div>
+<a class="w-full h-11 px-4 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold inline-flex items-center justify-center gap-1.5 transition-colors" href="#">
+<span>Manage skills &amp; evidence</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Sidebar Card 2: How Job Eligibility Works -->
+<div class="bg-[#E2F6D5] rounded-lg p-space-lg text-[#054D28] shadow-sm">
+<div class="flex items-center gap-2 mb-space-md">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+<h3 class="font-headline-sm text-headline-sm font-extrabold text-[#054D28]">How Eligibility Works</h3>
+</div>
+<ol class="space-y-space-md text-[#0E0F0C] font-body-sm text-body-sm">
+<li class="flex items-start gap-2.5">
+<span class="w-5 h-5 rounded-full bg-[#054D28] text-white flex items-center justify-center font-code-snippet text-xs shrink-0 mt-0.5">1</span>
+<span><strong>Objective Match Gates:</strong> Employers define specific code thresholds instead of unstructured resume bullet points.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="w-5 h-5 rounded-full bg-[#054D28] text-white flex items-center justify-center font-code-snippet text-xs shrink-0 mt-0.5">2</span>
+<span><strong>Evidence Match:</strong> FairFold cryptographic proofs verify commits, AST patterns, and pull requests to ensure honest qualification.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="w-5 h-5 rounded-full bg-[#054D28] text-white flex items-center justify-center font-code-snippet text-xs shrink-0 mt-0.5">3</span>
+<span><strong>Guaranteed Review:</strong> Apply only when verified eligible — zero spam means hiring teams guarantee code-level human review.</span>
+</li>
+</ol>
+<div class="mt-space-md pt-space-md border-t border-[#c1e6ae] flex items-center gap-2 text-[#054D28] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Contact info stays private until you apply.</span>
+</div>
+</div>
+<!-- Sidebar Card 3: Empty State Interactive Simulation -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-tertiary uppercase tracking-wider">Empty State Preview</span>
+<span class="font-code-snippet text-[11px] text-tertiary">Filter Simulation</span>
+</div>
+<div class="p-space-lg bg-surface-container-low rounded-2xl flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-tertiary mb-3">
+<span class="material-symbols-outlined text-[24px]">filter_list_off</span>
+</div>
+<h4 class="font-headline-sm text-label-lg font-bold text-on-surface">No direct matches</h4>
+<p class="font-body-sm text-body-sm text-secondary mt-1 max-w-[200px]">
+              No current openings require only non-indexed tools.
+            </p>
+<button class="mt-space-md px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container transition-colors shadow-sm">
+              Reset search criteria
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination Controls -->
+<div class="flex items-center justify-center gap-2 mt-space-xl py-space-md">
+<button class="h-10 px-4 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md inline-flex items-center gap-1 transition-colors shadow-sm disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 rounded-full bg-on-surface text-surface-container-lowest font-label-md text-label-md font-bold">
+          1
+        </button>
+<button class="w-10 h-10 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors shadow-sm">
+          2
+        </button>
+<button class="w-10 h-10 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors shadow-sm">
+          3
+        </button>
+</div>
+<button class="h-10 px-4 rounded-full bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md inline-flex items-center gap-1 transition-colors shadow-sm">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div></main><footer class="w-full bg-inverse-surface text-inverse-on-surface py-space-xl"><div class="max-w-[1360px] mx-auto px-margin-mobile md:px-margin"><div class="flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xs"><div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[14px]">verified</span></div><span class="font-headline-sm text-headline-sm text-inverse-on-surface">FairFold</span><span class="font-body-sm text-body-sm text-tertiary-fixed-dim ml-space-sm">Objective Developer Credentials</span></div><div class="flex flex-wrap items-center gap-space-lg text-tertiary-fixed-dim"><a class="font-body-sm text-body-sm hover:text-inverse-on-surface transition-colors" data-path="jobs" href="#">Explore Jobs</a><a class="font-body-sm text-body-sm hover:text-inverse-on-surface transition-colors" data-path="verified-profile" href="#">Verification Standard</a><a class="font-body-sm text-body-sm hover:text-inverse-on-surface transition-colors" data-path="privacy" href="#">Privacy Framework</a><a class="font-body-sm text-body-sm hover:text-inverse-on-surface transition-colors" data-path="terms" href="#">Terms of Service</a></div></div><div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-tertiary-fixed-dim"><span class="font-body-sm text-body-sm">© 2025 FairFold Protocol Inc. All rights reserved.</span><span class="font-code-snippet text-code-snippet text-tertiary-fixed-dim">ID: FF-8829-NJ</span></div></div></footer></body></html>

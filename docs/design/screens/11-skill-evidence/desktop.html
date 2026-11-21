@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Manrope:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"primary-fixed-dim":"#91d963","inverse-surface":"#2f3131","on-primary-container":"#2e6900","on-surface-variant":"#41493a","on-tertiary-fixed":"#1b1c19","on-background":"#1a1c1c","tertiary-fixed":"#e4e2dd","primary-fixed":"#acf67c","on-error":"#ffffff","primary-container":"#9fe870","surface-container-lowest":"#ffffff","inverse-on-surface":"#f0f1f1","surface-variant":"#e2e2e2","tertiary-fixed-dim":"#c8c6c1","background":"#f9f9f9","inverse-primary":"#91d963","error":"#ba1a1a","on-surface":"#1a1c1c","surface-container-low":"#f3f3f4","on-primary":"#ffffff","secondary-container":"#dbded9","surface-dim":"#dadada","surface-tint":"#2f6c00","surface-container-highest":"#e2e2e2","tertiary-container":"#d6d5cf","on-secondary-fixed":"#191c1a","on-error-container":"#93000a","on-tertiary":"#ffffff","on-primary-fixed-variant":"#225100","surface-bright":"#f9f9f9","on-secondary-container":"#5e625e","on-primary-fixed":"#092100","surface-container":"#eeeeee","surface-container-high":"#e8e8e8","secondary-fixed-dim":"#c4c7c3","on-secondary":"#ffffff","secondary":"#5b5f5c","outline":"#717a68","on-tertiary-fixed-variant":"#474743","secondary-fixed":"#e0e3de","error-container":"#ffdad6","tertiary":"#5e5f5a","surface":"#f9f9f9","on-tertiary-container":"#5c5c58","on-secondary-fixed-variant":"#444844","primary":"#2f6c00","outline-variant":"#c1cab5"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"margin":"3rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-md":"1rem","space-xl":"2.5rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter":"1.5rem","margin-mobile":"1.25rem"},"fontFamily":{"headline-lg-mobile":["Manrope"],"display-hero-mobile":["Manrope"],"label-md":["Inter"],"label-lg":["Inter"],"headline-md":["Manrope"],"display-hero":["Manrope"],"headline-sm":["Manrope"],"body-lg":["Inter"],"body-sm":["Inter"],"code-snippet":["JetBrains Mono"],"headline-lg":["Manrope"],"body-md":["Inter"]},"fontSize":{"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"800"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"900"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"800"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"900"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"code-snippet":["13px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen"><header class="sticky top-0 z-50 w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1360px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm group shrink-0" data-path="profile-verified-proofs" href="#"><div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[24px]">data_object</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-extrabold">FairFold</span></a><nav class="hidden lg:flex items-center gap-space-xs bg-surface-container-low px-space-xs py-space-xs rounded-full" data-active-classes="text-on-surface font-semibold bg-surface-container-lowest shadow-sm rounded-full"><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-1.5 transition-all text-on-surface font-semibold bg-surface-container-lowest shadow-sm rounded-full" data-path="profile-verified-proofs" href="#">Profile &amp; Verified Proofs</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-1.5 transition-all" data-path="evidence-explorer" href="#">Evidence Explorer</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-1.5 transition-all" data-path="matched-roles-pipeline" href="#">Matched Roles &amp; Pipeline</a><a class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-1.5 transition-all" data-path="settings-sovereignty" href="#">Settings &amp; Sovereignty</a></nav></div><div class="flex items-center gap-space-sm shrink-0"><div class="flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-label-md text-on-surface font-semibold">Blind Mode: ON</span><div class="w-8 h-4 rounded-full bg-primary-container p-0.5 flex items-center justify-end cursor-pointer"><div class="w-3 h-3 rounded-full bg-primary"></div></div></div><div class="hidden xl:flex items-center gap-space-xs pl-space-xs pr-space-md py-1 bg-surface-container-low rounded-full"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-md text-label-md font-bold">NC</div><div class="flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">@nusrat-codes</span><span class="font-code-snippet text-[11px] text-primary font-medium leading-none">Verified (SHA-256 Co-Signed)</span></div></div><a class="h-10 px-space-md rounded-full bg-primary-container text-on-primary-container hover:brightness-95 font-label-lg text-label-lg flex items-center justify-center transition-all" data-path="share-verified-link" href="#" title="Share Verified Proof Link">Share Verified Link</a></div></div></header><main class="w-full pt-20 bg-surface max-w-[1360px] mx-auto px-margin"><div class="flex flex-col w-full">
+<!-- Top Telemetry Ribbon -->
+<section class="w-full bg-inverse-surface text-inverse-on-surface rounded-DEFAULT shadow-sm px-space-md py-space-sm mb-space-lg">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Monospace Micro-Status Node -->
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-code-snippet text-code-snippet text-tertiary-fixed-dim">
+<span class="inline-flex items-center gap-1.5 text-primary-fixed font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+          EVIDENCE_EXPLORER // MERKLE_PROOFS_INDEXED
+        </span>
+<span class="hidden sm:inline opacity-30">|</span>
+<span>ORACLE: <strong class="text-inverse-on-surface">Firecracker microVM v1.4.1</strong></span>
+<span class="hidden md:inline opacity-30">|</span>
+<span class="truncate">ATTESTATION: <span class="text-primary-fixed underline decoration-dotted">SHA-256 (0x9f4c...b28a)</span></span>
+<span class="hidden lg:inline opacity-30">|</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/20 text-primary-fixed text-[11px] font-bold">ZERO-LEAK VERIFIED</span>
+<span class="hidden xl:inline opacity-30">|</span>
+<span>ROOTS: <strong class="text-inverse-on-surface">242 AST GRAPH ROOTS</strong></span>
+</div>
+<!-- Quick Telemetry Action Controls -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<!-- Mode Switcher Pill -->
+<div class="inline-flex items-center bg-surface-container-highest/20 p-0.5 rounded-full">
+<button class="px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all" id="btn-inspector-mode">
+            Candidate Inspector
+          </button>
+<button class="px-space-sm py-1 rounded-full font-label-md text-label-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-all" id="btn-audit-mode">
+            Recruiter Audit Mode
+          </button>
+</div>
+<!-- Download Bundle Pill -->
+<button class="inline-flex items-center gap-1.5 h-8 px-space-md rounded-full bg-primary-container text-on-primary-container hover:brightness-95 font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+          Export Bundle (.proof.json)
+        </button>
+</div>
+</div>
+</section>
+<!-- Evidence Scope Summary Header & Metric Cards -->
+<section class="flex flex-col gap-space-lg mb-space-xl">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md">
+            Candidate Sovereign Evidence Layer
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed/20 text-on-primary-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">verified</span> GPG Audited
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Cryptographic Evidence Explorer
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Deep-dive AST syntax trees, commit authorship proofs, and syntactic entropy verification across 4 connected repositories for <strong class="text-on-surface">Nusrat Jahan (@nusrat-codes)</strong>.
+        </p>
+</div>
+<!-- Quick Evidence Hash Stamp -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded-DEFAULT shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">fingerprint</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Proof Hash Digest</span>
+<span class="font-code-snippet text-code-snippet text-on-surface font-semibold">ed25519:7b0f...3e91</span>
+</div>
+</div>
+</div>
+<!-- 4-Stat Metric Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Total Commits Analyzed</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">commit</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-hero text-[40px] leading-tight text-on-surface">242</span>
+<span class="font-label-md text-label-md text-primary font-bold">100% GPG signed</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Evaluated AST Nodes</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-hero text-[40px] leading-tight text-on-surface">18,420</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">52 files</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 86%"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Algorithmic Entropy</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-hero text-[40px] leading-tight text-on-surface">0.86</span>
+<span class="font-label-md text-label-md text-primary font-bold">/ 1.00 (Human Author)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 86%"></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface-variant">Integrity Status</span>
+<div class="w-8 h-8 rounded-full bg-primary-fixed/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">security</span>
+</div>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Ed25519 Validated</span>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+          Zero hash collisions detected
+        </div>
+</div>
+</div>
+</section>
+<!-- Interactive Master-Detail Workspace Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start mb-space-xl">
+<!-- LEFT PANEL (35% tree, repository switcher, assertions, commit feed) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Repository Switcher Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">folder_special</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Repositories</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md">
+            4 Audited
+          </span>
+</div>
+<!-- Repository Tab Pills -->
+<div class="flex flex-col gap-space-xs" id="repo-list">
+<!-- Repo 1: Active -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-low border-l-4 border-l-primary flex flex-col gap-1 cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[15px] font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">code_blocks</span>
+                nusrat-codes/ast-syntax-analyzer
+              </span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">48 commits • TypeScript / Node.js AST</p>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-container/40 text-on-primary-container text-[11px] font-bold">Selected Target</span>
+<span class="font-code-snippet text-[11px] text-secondary">branch: main (7f3b89a)</span>
+</div>
+</div>
+<!-- Repo 2 -->
+<div class="p-space-md rounded-DEFAULT hover:bg-surface-container-low flex flex-col gap-1 cursor-pointer transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[15px] font-bold text-on-surface flex items-center gap-1.5 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">database</span>
+                nusrat-codes/nexus-commerce
+              </span>
+<span class="font-code-snippet text-[11px] text-tertiary">94 c.</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">TypeScript, Next.js 14, Prisma ORM</p>
+</div>
+<!-- Repo 3 -->
+<div class="p-space-md rounded-DEFAULT hover:bg-surface-container-low flex flex-col gap-1 cursor-pointer transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[15px] font-bold text-on-surface flex items-center gap-1.5 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">dns</span>
+                nusrat-codes/microservices-fleet
+              </span>
+<span class="font-code-snippet text-[11px] text-tertiary">62 c.</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Go, gRPC, Protobuf, Kafka Pipelines</p>
+</div>
+<!-- Repo 4 -->
+<div class="p-space-md rounded-DEFAULT hover:bg-surface-container-low flex flex-col gap-1 cursor-pointer transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-[15px] font-bold text-on-surface flex items-center gap-1.5 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">cloud</span>
+                nusrat-codes/cloud-event-stream
+              </span>
+<span class="font-code-snippet text-[11px] text-tertiary">38 c.</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">AWS Lambda, Redis PubSub, EventBridge</p>
+</div>
+</div>
+</div>
+<!-- Skill Assertions & AST Claim Filter -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Verified Claims</h3>
+<span class="font-code-snippet text-code-snippet text-primary font-bold">100% Deterministic</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Assertion 1 -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-DEFAULT bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-bold">TypeScript Generics &amp; AST</span>
+<span class="px-2 py-0.2 rounded-full bg-primary-fixed/20 text-on-primary-container text-[11px] font-bold">99% Valid</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">High-variance type guards, zero explicit any escapes.</p>
+</div>
+</label>
+<!-- Assertion 2 -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-DEFAULT hover:bg-surface-container-low cursor-pointer transition-all">
+<input class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Recursive Visitor Architecture</span>
+<span class="px-2 py-0.2 rounded-full bg-surface-container-high text-on-surface text-[11px]">96% Valid</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">Cyclic memory safety verified through depth benchmarks.</p>
+</div>
+</label>
+<!-- Assertion 3 -->
+<label class="flex items-start gap-space-sm p-space-sm rounded-DEFAULT hover:bg-surface-container-low cursor-pointer transition-all">
+<input class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Jest Deterministic Fuzz Tests</span>
+<span class="px-2 py-0.2 rounded-full bg-surface-container-high text-on-surface text-[11px]">94% Valid</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">100% boundary statement and edge case coverage.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Commit Timeline Feed -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">history</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Commit Timeline</h3>
+</div>
+<span class="font-code-snippet text-[12px] text-secondary">ast-syntax-analyzer</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Commit 1 (Active) -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-low shadow-sm flex flex-col gap-space-xs cursor-pointer border-l-4 border-l-primary">
+<div class="flex items-center justify-between">
+<span class="font-code-snippet text-code-snippet text-primary font-bold">7f3b89a (Active)</span>
+<span class="font-label-md text-[11px] text-on-surface-variant">Oct 14, 2025</span>
+</div>
+<p class="font-body-sm text-body-sm font-semibold text-on-surface">
+              feat: implement exhaustive AST discriminated union visitor with type guards
+            </p>
+<div class="flex items-center gap-space-sm text-[12px] text-on-surface-variant mt-1">
+<span class="text-primary font-semibold">+148</span>
+<span class="text-error font-semibold">-12</span>
+<span>• 4 files</span>
+<span class="inline-flex items-center gap-1 text-[11px] bg-surface-container-high px-1.5 py-0.5 rounded text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-primary">verified</span> GPG #7F3A9D
+              </span>
+</div>
+</div>
+<!-- Commit 2 -->
+<div class="p-space-md rounded-DEFAULT hover:bg-surface-container-low flex flex-col gap-space-xs cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="font-code-snippet text-code-snippet text-on-surface font-semibold">c4a129d</span>
+<span class="font-label-md text-[11px] text-on-surface-variant">Oct 11, 2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+              refactor: replace any with branded primitive string identifiers
+            </p>
+<div class="flex items-center gap-space-sm text-[12px] text-on-surface-variant">
+<span class="text-primary font-semibold">+84</span>
+<span class="text-error font-semibold">-42</span>
+<span>• 2 files</span>
+</div>
+</div>
+<!-- Commit 3 -->
+<div class="p-space-md rounded-DEFAULT hover:bg-surface-container-low flex flex-col gap-space-xs cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="font-code-snippet text-code-snippet text-on-surface font-semibold">8910bba</span>
+<span class="font-label-md text-[11px] text-on-surface-variant">Oct 04, 2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+              perf: cache AST node traversal paths using circular dependency checks
+            </p>
+<div class="flex items-center gap-space-sm text-[12px] text-on-surface-variant">
+<span class="text-primary font-semibold">+210</span>
+<span class="text-error font-semibold">-15</span>
+<span>• 6 files</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- RIGHT PANEL (65% Deep Evidence Corroboration Engine) -->
+<main class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Top Inspector Mode Tab Switcher Bar -->
+<div class="bg-surface-container-lowest p-space-sm rounded-DEFAULT shadow-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-full overflow-x-auto">
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm font-semibold transition-all">
+            Code Diff &amp; AST Overlay
+          </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all">
+            AST Tree Graph
+          </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all">
+            Entropy &amp; Complexity
+          </button>
+<button class="px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all">
+            Cryptographic Attestation
+          </button>
+</div>
+<div class="flex items-center gap-space-xs pr-space-sm">
+<span class="font-code-snippet text-[12px] text-on-surface-variant">Viewing:</span>
+<span class="font-code-snippet text-[12px] text-primary font-bold">src/parser/visitor.ts</span>
+</div>
+</div>
+<!-- Section 1: Code Diff with AST Node Annotation -->
+<div class="bg-surface-container-lowest rounded-DEFAULT shadow-sm overflow-hidden flex flex-col">
+<!-- Diff Header Toolbar -->
+<div class="bg-surface-container-low px-space-lg py-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<span class="font-code-snippet text-code-snippet font-bold text-on-surface">src/parser/visitor.ts</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px] font-semibold">TypeScript</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary bg-primary-fixed/20 px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">verified_user</span> GPG Key #7F3A9D Validated
+            </span>
+<span class="font-code-snippet text-[12px] text-on-surface-variant">Unified Diff (+42, -4)</span>
+</div>
+</div>
+<!-- Code Workspace with Interactive Annotation Badges -->
+<div class="p-space-lg bg-inverse-surface text-inverse-on-surface font-code-snippet text-code-snippet overflow-x-auto flex flex-col gap-0 leading-relaxed">
+<!-- Line 1 -->
+<div class="flex items-start gap-space-md py-0.5 opacity-60">
+<span class="w-8 text-right text-tertiary-fixed-dim select-none">1</span>
+<span class="text-tertiary-fixed">import { BaseNode, VisitorResult, NodeKind } from './types';</span>
+</div>
+<!-- Line 2 -->
+<div class="flex items-start gap-space-md py-0.5 opacity-60">
+<span class="w-8 text-right text-tertiary-fixed-dim select-none">2</span>
+<span class="text-tertiary-fixed"></span>
+</div>
+<!-- Line 3 - Diff Added -->
+<div class="flex items-start gap-space-md py-1 bg-primary/10 rounded px-1">
+<span class="w-8 text-right text-primary-fixed select-none">+ 3</span>
+<div class="flex-1 text-primary-fixed">
+<span class="text-primary-container font-bold">export interface</span> <span class="text-inverse-on-surface">ASTNodeVisitor&lt;T extends BaseNode&gt;</span> {
+            </div>
+</div>
+<!-- Line 4 - Diff Added -->
+<div class="flex items-start gap-space-md py-1 bg-primary/10 rounded px-1">
+<span class="w-8 text-right text-primary-fixed select-none">+ 4</span>
+<div class="flex-1 text-primary-fixed pl-4">
+<span class="text-inverse-on-surface">visit(node: T): VisitorResult&lt;T&gt;;</span>
+</div>
+</div>
+<!-- Line 5 -->
+<div class="flex items-start gap-space-md py-1 bg-primary/10 rounded px-1">
+<span class="w-8 text-right text-primary-fixed select-none">+ 5</span>
+<div class="flex-1 text-primary-fixed">}</div>
+</div>
+<!-- FLOATING AST ANNOTATION CALLOUT 1 -->
+<div class="my-2 p-space-md rounded-DEFAULT bg-surface-container-lowest text-on-surface shadow-md flex flex-col gap-1 border-l-4 border-l-primary">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container text-[11px] font-bold">AST: Generic Typings &amp; Recursive Boundary</span>
+<span class="font-code-snippet text-[12px] text-primary font-bold">Node #18,412 (InterfaceDeclaration)</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold">Corroborated 99.4%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              The generic constraint <code class="bg-surface-container px-1 rounded text-on-surface font-code-snippet">T extends BaseNode</code> enforces strict compile-time polymorphism across custom syntax branches, eliminating runtime structural downcasting.
+            </p>
+</div>
+<!-- Line 6 -->
+<div class="flex items-start gap-space-md py-0.5 opacity-60">
+<span class="w-8 text-right text-tertiary-fixed-dim select-none">6</span>
+<span></span>
+</div>
+<!-- Line 7 - Diff Added -->
+<div class="flex items-start gap-space-md py-1 bg-primary/10 rounded px-1">
+<span class="w-8 text-right text-primary-fixed select-none">+ 7</span>
+<div class="flex-1 text-primary-fixed">
+<span class="text-primary-container font-bold">export function</span> <span class="text-inverse-on-surface">assertExhaustiveSwitch(x: <span class="text-error-container">never</span>): <span class="text-error-container">never</span> {</span>
+</div>
+</div>
+<!-- Line 8 - Diff Added -->
+<div class="flex items-start gap-space-md py-1 bg-primary/10 rounded px-1">
+<span class="w-8 text-right text-primary-fixed select-none">+ 8</span>
+<div class="flex-1 text-primary-fixed pl-4">
+<span class="text-inverse-on-surface">throw new Error(`Unhandled AST node type: ${JSON.stringify(x)}`);</span>
+</div>
+</div>
+<!-- Line 9 - Diff Added -->
+<div class="flex items-start gap-space-md py-1 bg-primary/10 rounded px-1">
+<span class="w-8 text-right text-primary-fixed select-none">+ 9</span>
+<div class="flex-1 text-primary-fixed">}</div>
+</div>
+<!-- FLOATING AST ANNOTATION CALLOUT 2 -->
+<div class="my-2 p-space-md rounded-DEFAULT bg-surface-container-lowest text-on-surface shadow-md flex flex-col gap-1 border-l-4 border-l-primary-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px] font-bold">Syntactic Entropy: 0.91 (High)</span>
+<span class="font-code-snippet text-[12px] text-secondary">Strict Exhaustiveness Pattern</span>
+</div>
+<span class="font-label-md text-label-md text-on-primary-container font-semibold">Zero AI-Boilerplate Signature</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Exhaustive switch guard using the TypeScript <code class="bg-surface-container px-1 rounded text-on-surface font-code-snippet">never</code> primitive is an idiomatic enterprise Staff-level defensive coding pattern that guarantees compilation failure if new AST nodes are added without handling.
+            </p>
+</div>
+<!-- Line 10 -->
+<div class="flex items-start gap-space-md py-0.5 opacity-60">
+<span class="w-8 text-right text-tertiary-fixed-dim select-none">10</span>
+<span class="text-tertiary-fixed"></span>
+</div>
+<!-- Line 11 -->
+<div class="flex items-start gap-space-md py-0.5 opacity-60">
+<span class="w-8 text-right text-tertiary-fixed-dim select-none">11</span>
+<span class="text-tertiary-fixed">export class ASTVisitorDispatcher {</span>
+</div>
+<!-- Line 12 -->
+<div class="flex items-start gap-space-md py-0.5 opacity-60">
+<span class="w-8 text-right text-tertiary-fixed-dim select-none">12</span>
+<span class="text-tertiary-fixed pl-4">private readonly registry = new Map&lt;NodeKind, ASTNodeVisitor&lt;BaseNode&gt;&gt;();</span>
+</div>
+</div>
+</div>
+<!-- Section 2: AST Complexity & Entropy Breakdown (Bento Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Left: Complexity Vectors Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">analytics</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Complexity Vectors</h3>
+</div>
+<span class="font-code-snippet text-[12px] text-primary font-bold">AST Level: Senior III</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Metric Bar 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Syntactic Depth (Nested Type Constraints)</span>
+<span class="text-on-surface font-bold">92%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<!-- Metric Bar 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Token Entropy (Authentic coding cadence)</span>
+<span class="text-on-surface font-bold">88%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- Metric Bar 3 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-md text-label-md">
+<span class="text-on-surface font-medium">Dependency Cleanliness (Zero Circular Nodes)</span>
+<span class="text-on-surface font-bold">98%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<!-- Metric Bar 4 -->
+<div class="flex justify-between font-label-md text-label-md pt-1">
+<span class="text-on-surface-variant font-medium">Cyclomatic Density:</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/20 text-on-primary-container font-semibold">Low-to-Moderate (Clean Boundaries)</span>
+</div>
+</div>
+</div>
+<!-- Right: Cryptographic Attestation Block -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">enhanced_encryption</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Oracle Attestation</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md">
+              Immutable
+            </span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col gap-space-xs font-code-snippet text-[12px] text-on-surface">
+<div class="flex items-center justify-between border-b pb-1 border-outline-variant/30">
+<span class="text-on-surface-variant">MERKLE_ROOT:</span>
+<span class="font-bold text-primary truncate max-w-[200px]">0x3e19...c902b</span>
+</div>
+<div class="flex items-center justify-between border-b pb-1 border-outline-variant/30">
+<span class="text-on-surface-variant">VM_SANDBOX:</span>
+<span>Firecracker AWS Nitro</span>
+</div>
+<div class="flex items-center justify-between border-b pb-1 border-outline-variant/30">
+<span class="text-on-surface-variant">SIGNING_KEY:</span>
+<span>Ed25519 (Candidate Sovereign)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">TIMESTAMP:</span>
+<span>2025-10-14T18:42:09Z</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Co-signed by FairFold Consensus Nodes (<strong class="text-on-surface">7 of 7 attestations</strong>)
+            </span>
+</div>
+</div>
+</div>
+<!-- Section 3: Recruiter Verification Summary Box -->
+<div class="bg-surface-container-lowest p-space-xl rounded-DEFAULT shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+                Why this proves Staff / Senior engineering capability
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Plain-English cryptographic evaluation synthesized from AST parsing &amp; git delta logs.
+              </p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold shrink-0">
+            Evidence Confidence: 99.8%
+          </span>
+</div>
+<!-- 3 Plain-English Seniority Criteria Points -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Point 1 -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Structural Polymorphism</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Decoupled node visitation pattern enables extensible compiler passes without touching core AST definitions.
+            </p>
+</div>
+<!-- Point 2 -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Defensive Type-Safety</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Exhaustive never typing creates guaranteed build-break guarantees on AST drift, preventing silent runtime faults.
+            </p>
+</div>
+<!-- Point 3 -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Authentic Authorship</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              GPG co-signed commits with high token entropy prove original authorship, discarding synthetic AI or scraper reproduction.
+            </p>
+</div>
+</div>
+<!-- Action Footer Row -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<!-- Terminal CLI snippet -->
+<div class="w-full sm:w-auto flex items-center gap-space-xs bg-surface-container-low px-space-md py-2 rounded-full font-code-snippet text-code-snippet text-on-surface">
+<span class="text-primary font-bold">$</span>
+<span class="select-all">fairfold verify 7f3b89a --strict</span>
+<button class="ml-2 text-on-surface-variant hover:text-on-surface" onclick="navigator.clipboard.writeText('fairfold verify 7f3b89a --strict')" title="Copy CLI Command">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<!-- Share Citation CTA Button -->
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="h-10 px-space-lg rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">share</span>
+              Copy Cryptographic Citation URL
+            </button>
+<button class="h-10 px-space-lg rounded-full bg-primary-container text-on-primary-container hover:brightness-95 font-label-md text-label-md font-semibold flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+              Accept Proof in ATS
+            </button>
+</div>
+</div>
+</div>
+</main>
+</section>
+</div>
+<script>
+  // Simple micro-interaction for Mode Switcher & Navigation Active state
+  document.addEventListener('DOMContentLoaded', () => {
+    // Ensure Shell Navigation active state marks "Evidence Explorer"
+    const navLinks = document.querySelectorAll('header nav a');
+    navLinks.forEach(link => {
+      if (link.getAttribute('data-path') === 'evidence-explorer') {
+        link.className = 'text-on-surface font-semibold bg-surface-container-lowest shadow-sm rounded-full font-label-md text-label-md px-space-md py-1.5 transition-all';
+      } else {
+        link.className = 'text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-md py-1.5 transition-all';
+      }
+    });
+
+    // Inspector Mode Switcher
+    const inspectorBtn = document.getElementById('btn-inspector-mode');
+    const auditBtn = document.getElementById('btn-audit-mode');
+    if (inspectorBtn && auditBtn) {
+      inspectorBtn.addEventListener('click', () => {
+        inspectorBtn.className = 'px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all';
+        auditBtn.className = 'px-space-sm py-1 rounded-full font-label-md text-label-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-all';
+      });
+      auditBtn.addEventListener('click', () => {
+        auditBtn.className = 'px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all';
+        inspectorBtn.className = 'px-space-sm py-1 rounded-full font-label-md text-label-md text-tertiary-fixed-dim hover:text-inverse-on-surface transition-all';
+      });
+    }
+  });
+</script></main><footer class="w-full bg-inverse-surface text-inverse-on-surface mt-space-xl"><div class="max-w-[1360px] mx-auto px-margin py-margin"><div class="grid grid-cols-1 md:grid-cols-5 gap-space-xl pb-margin"><div class="md:col-span-1 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[20px]">data_object</span></div><span class="font-headline-sm text-headline-sm text-inverse-on-surface font-extrabold">FairFold</span></div><p class="font-body-sm text-body-sm text-tertiary-fixed-dim">Objective developer metric verification engine. Cryptographically anchored for candidate sovereignty and zero-bias evaluation.</p><div class="flex flex-wrap items-center gap-space-xs pt-space-xs"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest/10 text-primary-fixed font-label-md text-label-md"><span class="material-symbols-outlined text-[14px]">verified_user</span> ISO 27001</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest/10 text-primary-fixed font-label-md text-label-md"><span class="material-symbols-outlined text-[14px]">lock_open</span> SOC2 Type II</span></div></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-inverse-on-surface">Candidate Portal</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-tertiary-fixed-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="profile-verified-proofs" href="#">Profile &amp; Verified Proofs</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="evidence-explorer" href="#">Evidence Explorer</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="matched-roles-pipeline" href="#">Matched Roles</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="settings-sovereignty" href="#">Data Sovereignty</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-inverse-on-surface">Verification &amp; Protocol</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-tertiary-fixed-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="how-verification-works" href="#">Deterministic Scoring</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="audit-reports" href="#">Audit Trail Reports</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="anti-bias-declaration" href="#">Anti-Bias Protocol</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="trust-center" href="#">Trust Center</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-inverse-on-surface">Recruiter Engine</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-tertiary-fixed-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="pipeline-sourcing" href="#">Pipeline Sourcing</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="codebase-benchmarks" href="#">Repo Audit Benchmarks</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="recruiter-ats-integrations" href="#">ATS Integrations</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="enterprise-compliance" href="#">Enterprise SLA</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-inverse-on-surface">Legal &amp; Trust</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-tertiary-fixed-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="candidate-rights" href="#">Candidate Rights (GDPR)</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="security-whitepaper" href="#">Security Whitepaper</a></li></ul></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between text-tertiary-fixed-dim font-label-md text-label-md"><p>© 2025 FairFold Technologies, Inc. All rights reserved.</p><div class="flex items-center gap-space-lg mt-space-sm md:mt-0"><a class="hover:text-inverse-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy</a><a class="hover:text-inverse-on-surface transition-colors" data-path="terms-of-service" href="#">Terms</a><a class="hover:text-inverse-on-surface transition-colors" data-path="trust-center" href="#">Security</a></div></div></div></footer></body></html>
