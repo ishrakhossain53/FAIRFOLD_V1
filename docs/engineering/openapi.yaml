@@ -162,6 +162,15 @@ paths:
           $ref: '#/components/responses/BadRequest'
         '429':
           $ref: '#/components/responses/RateLimited'
+    delete:
+      tags: [candidate]
+      summary: Delete the stored CV and its parsed text
+      description: Removes the file and parsed content; skills the candidate already confirmed stay claimed. The consent copy promises this at any time.
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
   /me/claimed-skills:
     get:
       tags: [candidate]
@@ -254,6 +263,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/VerificationState'
+  /skills:
+    get:
+      tags: [candidate, recruiter]
+      summary: The skill taxonomy
+      description: The fixed list every skill id comes from; the CV review and job forms read it.
+      responses:
+        '200':
+          description: All skills
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Skill'
   /candidates:
     get:
       tags: [recruiter]
@@ -673,6 +696,22 @@ components:
         parse_state:
           type: string
           enum: [queued, parsed, failed]
+    Skill:
+      type: object
+      properties:
+        id:
+          type: string
+        canonical_name:
+          type: string
+        aliases:
+          type: array
+          items:
+            type: string
+        category:
+          type: string
+        github_signal:
+          type: string
+          enum: [strong, weak, none]
     ClaimedSkill:
       type: object
       properties:
@@ -817,7 +856,8 @@ components:
           enum: [all, minimum]
         min_match:
           type: integer
-          minimum: 0
+          minimum: 1
+          description: Required when `match_mode` is `minimum`, and no more than the number of required skills; ignored when `all`.
         enforce_gate:
           type: boolean
           description: true blocks applications; false shows verified skills as a ranking signal (decision D1)

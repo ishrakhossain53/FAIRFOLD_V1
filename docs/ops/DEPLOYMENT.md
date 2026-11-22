@@ -22,7 +22,7 @@ Two containers from one repository: the web app and the worker, matching the sin
 
 ## Migrations
 
-- Versioned, forward-only files, one concern per migration. `schema.sql` describes the target state for a fresh database; production changes arrive as migrations.
+- Versioned, forward-only files in `engineering/migrations/`, one concern per migration. `schema.sql` is the target state for a fresh database and is applied as migration `0001`; later changes arrive as new migration files.
 - Every migration ships with a tested rollback step, or an explicit note that it is irreversible and why.
 - Migrations run before the new application version starts. A schema change that needs both old and new code must be backward compatible for one release.
 - Destructive changes (dropping a column or table) wait one release after the code stops using them.

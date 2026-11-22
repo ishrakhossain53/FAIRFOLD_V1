@@ -68,7 +68,7 @@ The whole sequence targets under three minutes median. The slowest step is GitHu
 ### 3.2 Search and apply (recruiter and candidate)
 
 - Search reads `skill_verifications` filtered to `status = 'verified'`, joined to `skills` for normalisation, and to `candidate_profiles` for filters. Postgres handles this with a composite index on `(skill_id, status)`; pilot cardinality is thousands of rows, so no external index is needed.
-- A job stores `match_mode` (`all` or `minimum`) and `min_match`. Eligibility is computed by a single deterministic function over the job's required skills and the candidate's verified skills.
+- A job stores `match_mode` (`all` or `minimum`) and `min_match`. Eligibility is computed by a single deterministic function over the job's required skills and the candidate's verified skills. `minimum` requires `1 <= min_match <=` the number of required skills and is rejected otherwise at job creation — a floor of zero would open the gate to every candidate.
 - Apply writes an `applications` row that **snapshots** matched and missing skills. Later re-scans change the profile, never the historical application.
 - The gate is enforced twice — in the UI to explain, and in the API to decide — but only the API result counts. A failed gate returns `403` with `missing_skills` so the candidate learns exactly what to close.
 

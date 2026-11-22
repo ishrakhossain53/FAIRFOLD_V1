@@ -136,7 +136,9 @@ create table jobs (
   min_match    integer not null default 0 check (min_match >= 0),
   enforce_gate boolean not null default true,   -- decision D1: block vs ranking signal
   created_at   timestamptz not null default now(),
-  updated_at   timestamptz not null default now()
+  updated_at   timestamptz not null default now(),
+  -- A floor of zero in 'minimum' mode would open the gate to everyone; the API also caps it at the required count.
+  constraint jobs_min_match_floor_check check (match_mode = 'all' or min_match >= 1)
 );
 create index jobs_recruiter_idx on jobs (recruiter_id, status);
 create index jobs_open_idx on jobs (status) where status = 'open';
