@@ -4,12 +4,12 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
 
 ```mermaid
  erDiagram
-    USERS ||--o| CANDIDATE_PROFILES : "1:1 via user_id"
-    USERS ||--o| RECRUITER_PROFILES : "1:1 via user_id"
-    USERS ||--o{ CVS : "1:N"
-    USERS ||--o{ GITHUB_REPOS : "1:N"
-    USERS ||--o{ SKILL_VERIFICATIONS : "1:N"
-    USERS ||--o{ APPLICATIONS : "1:N"
+    USERS ||--o| CANDIDATE_PROFILES : "1:1, user_id"
+    USERS ||--o| RECRUITER_PROFILES : "1:1, user_id"
+    USERS ||--o{ CVS : "1:N, user_id"
+    USERS ||--o{ GITHUB_REPOS : "1:N, user_id"
+    USERS ||--o{ SKILL_VERIFICATIONS : "1:N, user_id"
+    USERS ||--o{ APPLICATIONS : "1:N, user_id"
     USERS ||--o{ JOBS : "recruiter_id on jobs"
 
     JOBS }|--|| USERS : "recruiter_id FK"
@@ -34,7 +34,7 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
         timestamptz created_at
     }
     CANDIDATE_PROFILES {
-        uuid user_id PK FK "to users"
+        uuid user_id PK
         text name
         text headline
         text location
@@ -45,13 +45,13 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
         boolean allow_partial_public
     }
     RECRUITER_PROFILES {
-        uuid user_id PK FK "to users"
+        uuid user_id PK
         text company_name
         text company_site
     }
     CVS {
         uuid id PK
-        uuid user_id FK "to users"
+        uuid user_id
         text storage_key
         jsonb parsed_json
         text parse_state
@@ -68,15 +68,15 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
     }
     CLAIMED_SKILLS {
         uuid id PK
-        uuid candidate_id FK "to users"
-        text skill_id FK "to skills"
+        uuid candidate_id
+        text skill_id
         text source_text
         boolean confirmed_by_candidate
         timestamptz created_at
     }
     GITHUB_REPOS {
         uuid id PK
-        uuid candidate_id FK "to users"
+        uuid candidate_id
         bigint github_repo_id
         text name
         boolean is_fork
@@ -87,8 +87,8 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
     }
     SKILL_VERIFICATIONS {
         uuid id PK
-        uuid candidate_id FK "to users"
-        text skill_id FK "to skills"
+        uuid candidate_id
+        text skill_id
         verification_status status
         numeric confidence
         text rule_version
@@ -98,8 +98,8 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
     }
     VERIFICATION_EVIDENCE {
         uuid id PK
-        uuid verification_id FK "to skill_verifications"
-        uuid repo_id FK "to github_repos, SET NULL on delete"
+        uuid verification_id
+        uuid repo_id
         evidence_type evidence_type
         text file_path
         integer authored_lines
@@ -107,7 +107,7 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
     }
     JOBS {
         uuid id PK
-        uuid recruiter_id FK "to users"
+        uuid recruiter_id
         text title
         text description
         job_status status
@@ -118,14 +118,14 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
         timestamptz updated_at
     }
     JOB_REQUIRED_SKILLS {
-        uuid job_id PK FK "to jobs"
-        text skill_id PK FK "to skills"
+        uuid job_id PK
+        text skill_id PK
         boolean required
     }
     APPLICATIONS {
         uuid id PK
-        uuid job_id FK "to jobs"
-        uuid candidate_id FK "to users"
+        uuid job_id
+        uuid candidate_id
         application_status status
         jsonb matched_skills
         jsonb missing_skills
@@ -133,7 +133,7 @@ Mermaid `erDiagram` for the current schema. Source of truth for columns and cons
         timestamptz created_at
     }
     AUDIT_LOG {
-        bigint id PK generated always as identity
+        bigint id PK
         uuid actor_pseudonym
         text action
         text subject
