@@ -1,11 +1,9 @@
-# Data model diagram
+# ER diagram
 
-Rendered from [`schema.sql`](schema.sql), which is the source of truth for columns and constraints. If the schema changes, regenerate this diagram from it — do not edit the picture by hand.
-
-## Entity relationship diagram
+Mermaid `erDiagram` for the current schema. Source of truth for columns and constraints is `schema.sql`; this diagram is the readable view for docs and slides. If the schema changes, regenerate this diagram from it — do not edit the picture by hand.
 
 ```mermaid
-erDiagram
+ erDiagram
     USERS ||--o| CANDIDATE_PROFILES : "1:1 via user_id"
     USERS ||--o| RECRUITER_PROFILES : "1:1 via user_id"
     USERS ||--o{ CVS : "1:N"
@@ -36,7 +34,7 @@ erDiagram
         timestamptz created_at
     }
     CANDIDATE_PROFILES {
-        uuid user_id PK FK -> users
+        uuid user_id PK FK "to users"
         text name
         text headline
         text location
@@ -47,13 +45,13 @@ erDiagram
         boolean allow_partial_public
     }
     RECRUITER_PROFILES {
-        uuid user_id PK FK -> users
+        uuid user_id PK FK "to users"
         text company_name
         text company_site
     }
     CVS {
         uuid id PK
-        uuid user_id FK -> users
+        uuid user_id FK "to users"
         text storage_key
         jsonb parsed_json
         text parse_state
@@ -70,15 +68,15 @@ erDiagram
     }
     CLAIMED_SKILLS {
         uuid id PK
-        uuid candidate_id FK -> users
-        text skill_id FK -> skills
+        uuid candidate_id FK "to users"
+        text skill_id FK "to skills"
         text source_text
         boolean confirmed_by_candidate
         timestamptz created_at
     }
     GITHUB_REPOS {
         uuid id PK
-        uuid candidate_id FK -> users
+        uuid candidate_id FK "to users"
         bigint github_repo_id
         text name
         boolean is_fork
@@ -89,8 +87,8 @@ erDiagram
     }
     SKILL_VERIFICATIONS {
         uuid id PK
-        uuid candidate_id FK -> users
-        text skill_id FK -> skills
+        uuid candidate_id FK "to users"
+        text skill_id FK "to skills"
         verification_status status
         numeric confidence
         text rule_version
@@ -100,8 +98,8 @@ erDiagram
     }
     VERIFICATION_EVIDENCE {
         uuid id PK
-        uuid verification_id FK -> skill_verifications
-        uuid repo_id FK -> github_repos, SET NULL on delete
+        uuid verification_id FK "to skill_verifications"
+        uuid repo_id FK "to github_repos, SET NULL on delete"
         evidence_type evidence_type
         text file_path
         integer authored_lines
@@ -109,7 +107,7 @@ erDiagram
     }
     JOBS {
         uuid id PK
-        uuid recruiter_id FK -> users
+        uuid recruiter_id FK "to users"
         text title
         text description
         job_status status
@@ -120,14 +118,14 @@ erDiagram
         timestamptz updated_at
     }
     JOB_REQUIRED_SKILLS {
-        uuid job_id PK FK -> jobs
-        text skill_id PK FK -> skills
+        uuid job_id PK FK "to jobs"
+        text skill_id PK FK "to skills"
         boolean required
     }
     APPLICATIONS {
         uuid id PK
-        uuid job_id FK -> jobs
-        uuid candidate_id FK -> users
+        uuid job_id FK "to jobs"
+        uuid candidate_id FK "to users"
         application_status status
         jsonb matched_skills
         jsonb missing_skills
